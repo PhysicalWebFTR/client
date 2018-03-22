@@ -1,23 +1,108 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
 
-export default class App extends React.Component {
+import { StyleSheet, Text, Image, ScrollView } from 'react-native';
+
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon } from 'native-base';
+
+import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
+import ExampleScreen from './components/Example'
+
+export default class AnatomyExample extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Container>
+        <RootStack/>
+      </Container>
     );
   }
 }
 
+
+const Stack = {
+  Example: {
+    screen: ExampleScreen
+  }
+}
+
+const sharedNavigationOptions = ({ navigation }) => ({
+  headerStyle: {
+    backgroundColor: '#4CAF50',
+    paddingLeft: 12
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold'
+  }
+})
+
+const DrawerRoutes = {
+  ExampleStack: {
+    name: 'ExampleViewStack',
+    screen: StackNavigator(Stack, { 
+      initialRouteName: 'Example', 
+      navigationOptions: sharedNavigationOptions
+    })
+  }
+};
+
+const RootStack =
+  StackNavigator({
+    Drawer: {
+      name: 'Drawer',
+      screen: DrawerNavigator(
+        DrawerRoutes,
+        {
+          contentComponent: (props) => (
+            <ScrollView>
+              <Container style={styles.navigationBackground}>
+                <Container style={styles.navigationImage}>
+                  <Image 
+                    source={require('./res/background.jpg')} 
+                    style={styles.itemImage}/>
+                </Container>
+                <Container style={styles.itemBackground}>
+                  <Text style={styles.itemName}>Header</Text>
+                </Container>
+              </Container>
+              <DrawerItems {...props} activeTintColor='#2196f3' padding='16' />
+            </ScrollView>
+          ),
+        }
+      )
+    },
+    ...Stack
+  },
+  {
+    headerMode: 'none'
+  }
+);
+
 const styles = StyleSheet.create({
-  container: {
+  navigationBackground: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    height: 160,
+  },
+  navigationImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  },
+  itemImage: {
+    flex: 1, 
+    resizeMode: 'center',
+    width: '100%',
+    height: '100%'
+  },
+  itemBackground: {
+    flex: 1,
+    backgroundColor: 'transparent',
     justifyContent: 'center',
   },
+  itemName: {
+    textAlign: 'center',
+    fontSize: 24,
+    color: '#fff'
+  }
 });
