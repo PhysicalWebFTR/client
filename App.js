@@ -1,11 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import MainLogin from './components/Login/MainLogin';
+import LandingScreen from './views/LandingScreen'
+import { Container, Header } from 'native-base'
 
 export default class App extends React.Component {
   render() {
     return (
-        <MainLogin/>
+      <Container>
+      <Header />
+        <LandingScreen/>
+      </Container>
     );
   }
 }
