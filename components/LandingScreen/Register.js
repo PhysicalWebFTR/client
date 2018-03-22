@@ -11,7 +11,8 @@ import {
   Button,
   Right,
   ListItem,
-  Left } from 'native-base';
+  Left,
+  Icon } from 'native-base';
 
 class Register extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Register extends Component {
   handleSubmit = () => {
     console.log('ini submit', this.state)
   }
-  
+
   render() {
     return (
       <Content>

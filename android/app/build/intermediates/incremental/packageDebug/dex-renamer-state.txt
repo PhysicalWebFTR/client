@@ -1,4 +1,4 @@
-#Thu Mar 22 16:08:11 WIB 2018
+#Thu Mar 22 20:38:38 WIB 2018
 base.0=/Users/tobiaskusnaman/Documents/finalProject/client/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/tobiaskusnaman/Documents/finalProject/client/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

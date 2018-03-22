@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LandingScreen from './views/LandingScreen'
 import { Container, Header } from 'native-base'
+import SplashScreen from './views/SplashScreen'
 
 export default class App extends React.Component {
   render() {
@@ -22,3 +23,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
