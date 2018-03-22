@@ -1,17 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import LandingScreen from './views/LandingScreen'
 import { Container, Header } from 'native-base'
-import SplashScreen from './views/SplashScreen'
+import LandingScreen from './src/views/LandingScreen'
+import SplashScreen from './src/views/SplashScreen'
 
 export default class App extends React.Component {
   render() {
     return (
-      // <SplashScreen/>
-      <Container>
-      <Header />
-        <LandingScreen/>
-      </Container>
+      <SplashScreen/>
+      // <Container>
+      // <Header />
+      //   <LandingScreen/>
+      // </Container>
     );
   }
 }

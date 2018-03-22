@@ -4,15 +4,9 @@ import {
   StyleSheet,
   Text,
   View,
-  StatusBar
+  StatusBar,
+  Image
 } from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 class SplashScreen extends Component {
   constructor(props) {
@@ -26,15 +20,7 @@ class SplashScreen extends Component {
           barStyle="light-content"
           backgroundColor="#0e4749"
         />
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <Image style={styles.image} source={require('../res/logo_tagline.png')} />
       </View>
     );
   }
@@ -47,17 +33,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#0e4749',
   },
+  image: {
+    height: 300,
+    width: 300,
+    borderRadius: 200,
+    borderWidth: 5,
+    borderColor: '#49a078'
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
     color: '#F5FCFF',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#F5FCFF',
-    marginBottom: 5,
-  },
+  }
 });
 
 export default SplashScreen;
