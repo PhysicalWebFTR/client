@@ -43,7 +43,8 @@ class Register extends Component {
             <Icon name="md-person"/>
           </Item>
           <Item floatingLabel last>
-            <Input 
+            <Input
+              secureTextEntry={true}
               placeholder="Password"
               onChangeText={(password) => this.setState({password})}
             />

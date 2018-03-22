@@ -28,41 +28,44 @@ class LandingScreen extends Component {
 
   render() {
     return (
-      <Register/> //Ini buat register
+      // <Register/> //Ini buat register
 
       //Ini isi benerannya
 
-      //   <Content>
-      //   <Form>
-      //     <Item floatingLabel last>
-      //       <Input
-      //         placeholder="Email"
-      //         onChangeText={(email) => this.setState({email})}
-      //       />
-      //       <Icon name="md-mail" />
-      //     </Item>
-      //     <Item floatingLabel last>
-      //       <Input 
-      //         placeholder="Password"
-      //         onChangeText={(password) => this.setState({password})}
-      //       />
-      //       <Icon name="md-key" />
-      //     </Item>
-      //   </Form>
-      //   <Left>
-      //     <Button warning 
-      //       style={styles.button}
-      //       onPress={() => this.handleSubmit()}
-      //       >
-      //       <Text> Log In </Text>
-      //     </Button>
-      //     <Button warning 
-      //       style={styles.button}
-      //       >
-      //       <Text> Sign Up </Text>
-      //     </Button>
-      //   </Left>
-      // </Content>
+        <Content>
+        <Form>
+          <Item floatingLabel last>
+            <Input
+              placeholder="Email"
+              onChangeText={(email) => this.setState({email})}
+            />
+            <Icon name="md-mail" />
+          </Item>
+          <Item floatingLabel last>
+            <Input 
+              secureTextEntry={true}
+              placeholder="Password"
+              onChangeText={(password) => this.setState({password})}
+            />
+            <Icon name="md-key" />
+          </Item>
+        </Form>
+        <Left>
+          <View style={styles.action}>
+            <Button warning 
+              style={styles.button}
+              onPress={() => this.handleSubmit()}
+              >
+              <Text> Log In </Text>
+            </Button>
+            <Button warning 
+              style={styles.button}
+              >
+              <Text> Sign Up </Text>
+            </Button>
+          </View>
+        </Left>
+      </Content>
     );
   }
 }
@@ -73,6 +76,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 300,
   },
+  action: {
+    margin: 10
+  }
 });
 
 export default LandingScreen;

@@ -7,6 +7,7 @@ import SplashScreen from './views/SplashScreen'
 export default class App extends React.Component {
   render() {
     return (
+      // <SplashScreen/>
       <Container>
       <Header />
         <LandingScreen/>
