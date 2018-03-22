@@ -29,22 +29,25 @@ class Register extends Component {
       <Content>
         <Form>
           <Item floatingLabel last>
-            <Label>Email</Label>
             <Input
               onChangeText={(email) => this.setState({email})}
+              placeholder="Email"
             />
+            <Icon name="md-mail"/>
           </Item>
           <Item floatingLabel>
-            <Label>Full Name</Label>
-            <Input 
+            <Input
+              placeholder="Full Name"
               onChangeText={(name) => this.setState({name})}
             />
+            <Icon name="md-person"/>
           </Item>
           <Item floatingLabel last>
-            <Label>Password</Label>
             <Input 
+              placeholder="Password"
               onChangeText={(password) => this.setState({password})}
             />
+            <Icon name="md-key"/>
           </Item>
         </Form>
         <Left>

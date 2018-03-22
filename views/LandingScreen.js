@@ -28,37 +28,41 @@ class LandingScreen extends Component {
 
   render() {
     return (
-        <Content>
-        <Form>
-          <Item floatingLabel last>
-            <Label>Email</Label>
-            <Input
-              onChangeText={(email) => this.setState({email})}
-            />
-            <Icon name="md-mail" />
-          </Item>
-          <Item floatingLabel last>
-            <Label>Password</Label>
-            <Input 
-              onChangeText={(password) => this.setState({password})}
-            />
-            <Icon name="md-key" />
-          </Item>
-        </Form>
-        <Left>
-          <Button warning 
-            style={styles.button}
-            onPress={() => this.handleSubmit()}
-            >
-            <Text> Log In </Text>
-          </Button>
-          <Button warning 
-            style={styles.button}
-            >
-            <Text> Sign Up </Text>
-          </Button>
-        </Left>
-      </Content>
+      <Register/> //Ini buat register
+
+      //Ini isi benerannya
+
+      //   <Content>
+      //   <Form>
+      //     <Item floatingLabel last>
+      //       <Input
+      //         placeholder="Email"
+      //         onChangeText={(email) => this.setState({email})}
+      //       />
+      //       <Icon name="md-mail" />
+      //     </Item>
+      //     <Item floatingLabel last>
+      //       <Input 
+      //         placeholder="Password"
+      //         onChangeText={(password) => this.setState({password})}
+      //       />
+      //       <Icon name="md-key" />
+      //     </Item>
+      //   </Form>
+      //   <Left>
+      //     <Button warning 
+      //       style={styles.button}
+      //       onPress={() => this.handleSubmit()}
+      //       >
+      //       <Text> Log In </Text>
+      //     </Button>
+      //     <Button warning 
+      //       style={styles.button}
+      //       >
+      //       <Text> Sign Up </Text>
+      //     </Button>
+      //   </Left>
+      // </Content>
     );
   }
 }
