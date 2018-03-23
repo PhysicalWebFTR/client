@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, Image, ScrollView } from 'react-native';
 
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon } from 'native-base';
-
 import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
+
 import ExampleScreen from './components/Example'
+import SearchRestaurantScreen from './views/SearchRestaurant'
+import SelectTableScreen from './views/SelectTable'
+import ListMenuScreen from './views/ListMenu'
+import OrderSummaryScreen from './views/OrderSummary'
 
 export default class AnatomyExample extends Component {
   render() {
@@ -14,13 +18,6 @@ export default class AnatomyExample extends Component {
         <RootStack/>
       </Container>
     );
-  }
-}
-
-
-const Stack = {
-  Example: {
-    screen: ExampleScreen
   }
 }
 
@@ -35,6 +32,26 @@ const sharedNavigationOptions = ({ navigation }) => ({
   }
 })
 
+
+const Stack = {
+  Example: {
+    screen: ExampleScreen
+  },
+  SearchRestaurant: {
+    screen: SearchRestaurantScreen
+  },
+  SelectTable: {
+    screen: SelectTableScreen
+  },
+  ListMenu: {
+    screen: ListMenuScreen
+  },
+  OrderSummary: {
+    screen: OrderSummaryScreen
+  }
+}
+
+
 const DrawerRoutes = {
   ExampleStack: {
     name: 'ExampleViewStack',
@@ -42,8 +59,15 @@ const DrawerRoutes = {
       initialRouteName: 'Example', 
       navigationOptions: sharedNavigationOptions
     })
+  },
+  SearchRestaurantStack: {
+    name: 'SearchRestaurantViewStack',
+    screen: StackNavigator(Stack, { 
+      initialRouteName: 'SearchRestaurant', 
+      navigationOptions: sharedNavigationOptions
+    })
   }
-};
+}
 
 const RootStack =
   StackNavigator({
@@ -75,7 +99,7 @@ const RootStack =
   {
     headerMode: 'none'
   }
-);
+)
 
 const styles = StyleSheet.create({
   navigationBackground: {
@@ -105,4 +129,4 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: '#fff'
   }
-});
+})
