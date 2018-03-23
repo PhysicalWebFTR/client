@@ -34,7 +34,7 @@ class CardMenu extends Component {
               <Body>
                 <Text style={styles.textName}>Menu Name</Text>
                 <Text note>Rp. xxx.xxx</Text>
-                <Text note style={styles.textName}>Description lorem ipsum sir doler amit ...</Text>
+                <Text note style={styles.textDescription}>Description lorem ipsum sir doler amit ...</Text>
               </Body>
             </Left>
           </CardItem>
@@ -59,10 +59,10 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   textName: {
-    fontStyle: "italic"
+    fontWeight: "bold"
   },
   textDescription: {
-
+    fontStyle: "italic"
   },
   button: {
     flex: 1
