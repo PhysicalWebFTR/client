@@ -20,7 +20,7 @@ class SplashScreen extends Component {
           barStyle="light-content"
           backgroundColor="#0e4749"
         />
-        <Image style={styles.image} source={require('../res/logo_tagline.png')} />
+        <Image style={styles.image} source={require('../res/logo.png')} />
       </View>
     );
   }
@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#0e4749',
   },
   image: {
-    height: 300,
-    width: 300,
-    borderRadius: 200,
+    height: 175,
+    width: 175,
+    borderRadius: 10,
     borderWidth: 5,
     borderColor: '#49a078'
   },
