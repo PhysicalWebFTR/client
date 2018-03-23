@@ -19,7 +19,7 @@
   "dependencies": {
     "bytes-counter": "^1.0.0",
     "convert-string": "^0.1.0",
-    "native-base": "2.3.10",
+    "native-base": "^2.3.10",
     "pusher-js": "^4.2.2",
     "random-id": "^0.0.2",
     "react": "16.2.0",
