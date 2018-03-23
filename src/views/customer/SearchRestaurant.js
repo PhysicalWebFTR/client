@@ -3,7 +3,7 @@ import { Container, Icon, Text } from 'native-base'
 
 import CardRestaurant from '../../components/customer/CardRestaurant'
 
-class SeacrhRestaurant extends Component {
+class SearchRestaurant extends Component {
 
   constructor(props){
     super(props)
@@ -38,4 +38,4 @@ class SeacrhRestaurant extends Component {
 
 }
 
-export default SeacrhRestaurant
+export default SearchRestaurant

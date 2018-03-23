@@ -1,25 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon } from 'native-base';
+
+import { StyleSheet, Text, Image, ScrollView } from 'react-native';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon } from 'native-base'
+
 import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
 
 import SearchRestaurantScreen from './src/views/customer/SearchRestaurant'
 import SelectTableScreen from './src/views/customer/SelectTable'
-import ListMenuScreen from './src/views/customer/ListMenu'
+
+import ListMenuCustomerScreen from './src/views/customer/ListMenuCustomer'
 import OrderSummaryScreen from './src/views/customer/OrderSummary'
 
-import LandingScreen from './src/views/LandingScreen'
-import TableScreen from './src/views/customer/TableScreen'
-import SplashScreen from './src/views/SplashScreen'
-import ListMenuOwner from './src/views/owner/ListMenu'
-import DetailMenu from './src/components/owner/DetailMenu'
+import ListMenuOwnerScreen from './src/views/owner/ListMenuOwner'
+import DetailMenuOwner from './src/components/owner/DetailMenu'
 import AddMenu from './src/components/owner/AddMenu'
 
 export default class App extends React.Component {
   render() {
     return (
       <Container>
-        <RootStack/>
+        <RootStack />
       </Container>
     );
   }
@@ -45,19 +45,17 @@ const Stack = {
     screen: SelectTableScreen
   },
   ListMenu: {
-    screen: ListMenuScreen
+    screen: ListMenuCustomerScreen
   },
   OrderSummary: {
     screen: OrderSummaryScreen
   },
-  LandingScreen: {
-    screen: LandingScreen
+
+  ListMenuOwnerScreen: {
+    screen: ListMenuOwnerScreen
   },
-  ListMenuOwner: {
-    screen: ListMenuOwner
-  },
-  DetailMenu: {
-    screen: DetailMenu
+  DetailMenuOwner: {
+    screen: DetailMenuOwner
   },
   AddMenu: {
     screen: AddMenu
@@ -136,4 +134,3 @@ const styles = StyleSheet.create({
     color: '#fff'
   }
 })
-
