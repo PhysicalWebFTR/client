@@ -15,7 +15,8 @@ export default class AnatomyExample extends Component {
   render() {
     return (
       <Container>
-        <RootStack/>
+        {/* <RootStack/> */}
+        <ListMenuScreen/>
       </Container>
     );
   }
