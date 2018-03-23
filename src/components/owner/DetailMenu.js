@@ -31,8 +31,8 @@ export default class DetailMenu extends Component {
                 </Body>
               </Left>
             </CardItem>
-            <CardItem cardBody>
-              <Image source={{uri: this.state.detail.imageUrl}} style={{height: 250, width: null, flex: 1}}/>
+            <CardItem cardBody bordered>
+              <Image source={{uri: this.state.detail.imageUrl}} style={{height: 270, width: null, flex: 1}}/>
             </CardItem>
             <CardItem>
               <Text style={{color: '#585858'}}>{this.state.detail.desc}</Text>

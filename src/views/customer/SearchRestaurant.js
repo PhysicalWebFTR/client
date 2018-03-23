@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Container, Icon, Text } from 'native-base'
+import { StyleSheet } from 'react-native'
+import { Container, Icon, Text, Button } from 'native-base'
 
 import CardRestaurant from '../../components/customer/CardRestaurant'
 
@@ -14,6 +15,12 @@ class SearchRestaurant extends Component {
     const name = 'Search Restaurant'
     return {
       title: name,
+      headerRight: 
+        <Icon
+        style={{ color: '#fff', marginRight: 15 }}
+        ios='ios-sync' android="md-sync"
+        size={35}
+      />,
       drawerIcon: ({ tintColor }) => (
         <Icon name="home" size={24} style={{ color: tintColor }} />
       ),
@@ -37,5 +44,13 @@ class SearchRestaurant extends Component {
   }
 
 }
+
+const styles = StyleSheet.create({
+  buttonScan: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+});
 
 export default SearchRestaurant

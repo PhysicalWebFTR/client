@@ -24,6 +24,10 @@ class Register extends Component {
     console.log('ini submit', this.state)
   }
 
+  static navigationOptions = {
+    title: 'Register'
+  }
+
   render() {
     return (
       <Content>

@@ -18,7 +18,7 @@ class SplashScreen extends Component {
       <View style={styles.container}>
         <StatusBar
           barStyle="light-content"
-          backgroundColor="#0e4749"
+          backgroundColor="#f7b734"
         />
         <Image style={styles.image} source={require('../res/logo.png')} />
       </View>
@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0e4749',
+    backgroundColor: '#f7b734',
   },
   image: {
-    height: 175,
-    width: 175,
-    borderRadius: 10,
+    height: 150,
+    width: 150,
+    borderRadius: 30,
     borderWidth: 5,
-    borderColor: '#49a078'
+    borderColor: '#e3af2f'
   },
   welcome: {
     fontSize: 20,

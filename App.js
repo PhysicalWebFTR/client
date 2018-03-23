@@ -15,6 +15,9 @@ import ListMenuOwnerScreen from './src/views/owner/ListMenuOwner'
 import DetailMenuOwner from './src/components/owner/DetailMenu'
 import AddMenu from './src/components/owner/AddMenu'
 
+import LandingScreen from './src/views/LandingScreen'
+import Register from './src/components/LandingScreen/Register'
+
 export default class App extends React.Component {
   render() {
     return (
@@ -50,7 +53,6 @@ const Stack = {
   OrderSummary: {
     screen: OrderSummaryScreen
   },
-
   ListMenuOwnerScreen: {
     screen: ListMenuOwnerScreen
   },
@@ -59,6 +61,12 @@ const Stack = {
   },
   AddMenu: {
     screen: AddMenu
+  },
+  LandingScreen: {
+    screen: LandingScreen
+  },
+  Register: {
+    screen: Register
   }
 }
 
@@ -67,7 +75,7 @@ const DrawerRoutes = {
   SearchRestaurantStack: {
     name: 'SearchRestaurantViewStack',
     screen: StackNavigator(Stack, { 
-      initialRouteName: 'SearchRestaurant', 
+      initialRouteName: 'LandingScreen', 
       navigationOptions: sharedNavigationOptions
     })
   }

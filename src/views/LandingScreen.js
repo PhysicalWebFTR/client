@@ -12,9 +12,8 @@ import {
   Right,
   ListItem,
   Left,
-  Icon } from 'native-base';
-
-import Register from '../components/LandingScreen/Register'
+  Icon, 
+  Title} from 'native-base';
 
 class LandingScreen extends Component {
   constructor(props) {
@@ -23,10 +22,16 @@ class LandingScreen extends Component {
   }
 
   handleSubmit = () => {
-    console.log('ini submit', this.state)
+    var { navigate } = this.props.navigation
+    navigate('SearchRestaurant')
+  }
+
+  static navigationOptions = {
+    title: 'Login'
   }
 
   render() {
+    var { navigate } = this.props.navigation
     return (
       // <Register/> //Ini buat register
 
@@ -56,12 +61,13 @@ class LandingScreen extends Component {
               style={styles.button}
               onPress={() => this.handleSubmit()}
               >
-              <Text> Log In </Text>
+              <Text> Submit </Text>
             </Button>
             <Button warning 
               style={styles.button}
+              onPress={() => navigate('Register')}
               >
-              <Text> Sign Up </Text>
+              <Text> Register </Text>
             </Button>
           </View>
         </Left>

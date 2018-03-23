@@ -52,7 +52,7 @@ class ListMenu extends Component {
       headerRight:
         <Icon
           style={{ color: '#fff', marginRight: 12 }}
-          ios='ios-menu' android="md-menu"
+          ios='ios-menu' android="md-list-box"
           size={35}
           onPress={() => navigation.navigate('OrderSummary', { id: '-AoiQHkajcs' })}
         />

@@ -1,67 +1,64 @@
 import React, { Component } from 'react'
-import { StyleSheet, Dimensions } from 'react-native'
+import { StyleSheet, Dimensions, Image } from 'react-native'
 import {
+  Container,
+  Header,
+  Content,
   Card,
   CardItem,
   Body,
   Text,
-  Container,
-  Button
+  Button,
+  Left,
+  Right,
+  Icon
 } from 'native-base'
-
 class CardMenu extends Component {
-
+  constructor(props){
+    super(props)
+  }
   render() {
+    const imageUrl = 'https://scontent-sit4-1.cdninstagram.com/vp/0ec4c984bff82516b657ed62a5f07b56/5B3916E1/t51.2885-15/s640x640/sh0.08/e35/25013783_311713692651669_4180162197407662080_n.jpg'
     return (
-      <Container style={styles.container}>
-        <Card style={styles.card}>
-          <CardItem header>
-            <Text>NativeBase</Text>
+        <Card>
+          <CardItem cardBody>
+            <Image source={{ uri: imageUrl }}
+              style={styles.image} />
           </CardItem>
-          <CardItem style={styles.body}>
-            <Body>
-              <Text>
-                Crispy Spicy Salmon Aburi Roll
-              </Text>
-              <Text>
-                Rp xxx
-              </Text>
-            </Body>
+          <CardItem>
+            <Left>
+              <Body>
+                <Text style={styles.textName}>Menu Name</Text>
+                <Text note>Rp. xxx.xxx</Text>
+                <Text note style={styles.textDescription}>Description lorem ipsum sir doler amit ...</Text>
+              </Body>
+            </Left>
           </CardItem>
-          <CardItem footer style={styles.footer}>
+          <CardItem>
             <Button block success style={styles.button}>
               <Text>Add</Text>
             </Button>
           </CardItem>
         </Card>
-      </Container>
     )
   }
-
 }
-
 const { width } = Dimensions.get('window');
-// const itemWidth = (width - 15) / 2;
 const itemWidth = (width - 15);
-
 const styles = StyleSheet.create({
-  container: {
-    height: 250
+  image: {
+    height: width,
+    width: width,
+    resizeMode: 'contain'
   },
-  body: {
-    height: 170,
+  textName: {
+    fontWeight: "bold"
   },
-  card: {
-    minWidth: itemWidth,
-    maxWidth: itemWidth
-  },
-  footer: {
-    flex: 1,
-    alignItems: 'center',
+  textDescription: {
+    fontStyle: "italic"
   },
   button: {
     flex: 1
   }
 })
-
 export default CardMenu
