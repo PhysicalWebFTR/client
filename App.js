@@ -1,14 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Container, Header } from 'native-base'
+import LandingScreen from './src/views/LandingScreen'
+import TableScreen from './src/views/customer/TableScreen'
+import SplashScreen from './src/views/SplashScreen'
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <TableScreen/>
+      // <SplashScreen/>
+      // <Container>
+      // <Header />
+      //   <LandingScreen/>
+      // </Container>
     );
   }
 }
@@ -21,3 +26,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
