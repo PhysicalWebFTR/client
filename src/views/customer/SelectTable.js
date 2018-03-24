@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import {
   Container,
@@ -14,6 +16,8 @@ import {
   Input
 } from 'native-base'
 
+import { fetchCustomerTable } from '../../store/actions'
+
 class SelectTable extends Component {
 
   static navigationOptions = ({ navigation }) => {
@@ -23,16 +27,24 @@ class SelectTable extends Component {
     }
   }
 
-  constructor(props) {
-    super(props)
-    const { navigate } = this.props.navigation
+  // constructor(props) {
+  //   super(props)
+  //   const { navigate } = this.props.navigation
+  // }
+
+  // _clickMoveToSelectMenu = (id) => {
+  //   const { navigate } = this.props.navigation
+  //   navigate('ListMenu', { id: id })
+  // }
+  componentWillMount () {
+    console.log('oooi', this.props)
   }
 
-  _clickMoveToSelectMenu = (id) => {
+  handleSubmit = () => {
+    this.props.fetchCustomerTable(this.state.tableNum)
     const { navigate } = this.props.navigation
-    navigate('ListMenu', { id: id })
+    navigate('ListMenu')
   }
-
 
   render() {
     return (
@@ -41,12 +53,12 @@ class SelectTable extends Component {
           <Card style={styles.card}>
             <Form style={styles.form}>
               <Item floatingLabel>
-                <Input keyboardType="numeric" style={styles.inputItem} />
+                <Input onChangeText={(tableNum) => this.setState({tableNum})} keyboardType="numeric" style={styles.inputItem} />
               </Item>
               <Button 
               block 
               success 
-              onPress={() => this._clickMoveToSelectMenu('-Ls9hq0evb')}>
+              onPress={() => this.handleSubmit()}>
                 <Text>Submit</Text>
               </Button>
             </Form>
@@ -76,4 +88,10 @@ const styles = StyleSheet.create({
   }
 })
 
-export default SelectTable
+const mapDispatchToProps = dispatch => bindActionCreators({
+  fetchCustomerTable
+}, dispatch)
+
+const connectedSelectTable = connect(null, mapDispatchToProps)(SelectTable)
+
+export default connectedSelectTable

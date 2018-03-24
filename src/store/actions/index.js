@@ -1,11 +1,27 @@
 import {
-  fetchRestaurantsLoading,
-  fetchRestaurants,
-  fetchRestaurantsReset
-} from './getRestaurants'
+  fetchPeripheralsLoading,
+  fetchPeripherals,
+  fetchPeripheralsReset,
+  fetchPeripheralId,
+  fetchPeripheralDetail
+} from './fetchPeripherals'
+
+import {
+  fetchRestaurant
+} from './fetchRestaurants'
+
+import { 
+  fetchCustomerTable,
+  fetchCustomerRestaurantId
+} from './fetchCustomerTable'
 
 export {
-  fetchRestaurantsLoading,
-  fetchRestaurants,
-  fetchRestaurantsReset
+  fetchPeripheralsLoading,
+  fetchPeripherals,
+  fetchPeripheralsReset,
+  fetchPeripheralId,
+  fetchRestaurant,
+  fetchPeripheralDetail,
+  fetchCustomerTable,
+  fetchCustomerRestaurantId
 }

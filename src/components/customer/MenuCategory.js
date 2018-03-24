@@ -4,6 +4,8 @@ import {
   Container, 
   Text
 } from 'native-base'
+import { connect } from 'react-redux'
+// import { bindActionCreators } from 'redux'
 
 import CardMenu from './CardMenu'
 
@@ -15,6 +17,14 @@ class MenuCategory extends Component {
     this.state = {
       data: ['a', 'b', 'c']
     }
+  }
+
+  static navigationOptions = ({navigation}) => {
+    console.log('ini navigation : ', navigation)
+  }
+
+  componentDidMount () {
+    console.log('ini props: ', this.props)
   }
 
   _keyExtractor = (item, index) => item.itemId
@@ -29,7 +39,7 @@ class MenuCategory extends Component {
           horizontal={false}
           // numColumns='2'
           renderItem={({ item }) =>
-            <CardMenu/>
+            <CardMenu key={item}/>
           }
         />
       </Container>
@@ -49,4 +59,10 @@ const styles = StyleSheet.create({
   }
 })
 
-export default MenuCategory
+const mapStateToProps = state => ({
+  restaurant: state.restaurant
+})
+
+const connectedMenuCategory = connect(mapStateToProps)(MenuCategory)
+
+export default connectedMenuCategory

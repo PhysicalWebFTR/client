@@ -21,33 +21,20 @@ const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule); // create an event emitter for the BLE Manager module
 
 import {
-  fetchRestaurants,
-  fetchRestaurantsLoading,
-  fetchRestaurantsReset
+  fetchPeripherals,
+  fetchPeripheralsLoading,
+  fetchPeripheralsReset
 } from '../../store/actions'
 
 import { stringToBytes } from 'convert-string'; // for converting string to byte array
-import RandomId from 'random-id'; // for generating random user ID
-import bytesCounter from 'bytes-counter'; // for getting the number of bytes in a string
-import Pusher from 'pusher-js/react-native'; // for using Pusher inside React Native
-import Spinner from 'react-native-spinkit'; // for showing a spinner when loading something 
+// import RandomId from 'random-id'; // for generating random user ID
+// import bytesCounter from 'bytes-counter'; // for getting the number of bytes in a string
+// import Pusher from 'pusher-js/react-native'; // for using Pusher inside React Native
+// import Spinner from 'react-native-spinkit'; // for showing a spinner when loading something 
 
 import CardRestaurant from '../../components/customer/CardRestaurant'
 
 class SearchRestaurant extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      is_scanning: false, // whether the app is currently scanning for peripherals or not
-      peripherals: null, // the peripherals detected
-      connected_peripheral: null, // the currently connected peripheral
-      // user_id: null, // the ID of the current user
-      dataRestaurants: null, // the dataRestaurants currently synced with the app
-      // has_attended: false // whether the current user has already attended
-    }
-    this.peripherals = [];
-  }
-
   componentWillMount() {
     console.log('BleManager : ',BleManager)
     this.checkBluetooth()
@@ -57,9 +44,9 @@ class SearchRestaurant extends Component {
 
   componentDidMount() {
     console.log(this.props, 'ini props')
+    console.log(fetchPeripheralsReset, 'reset')
     this.addListenerDiscoverPeripheral()
     this.addListenerStopScan()
-    this.getPusherData()
   }
   
   checkBluetooth() {
@@ -109,7 +96,7 @@ class SearchRestaurant extends Component {
             id: peripheral.id, // mac address of the peripheral
             name: peripheral.name // descriptive name given to the peripheral
           })
-          this.props.fetchRestaurants(peripherals)
+          this.props.fetchPeripherals(peripherals)
           this.peripherals = peripherals; // update the array of peripherals
         }
       }
@@ -117,12 +104,11 @@ class SearchRestaurant extends Component {
   }
 
   addListenerStopScan() {
-    console.log('state addListenerStopScan')
     bleManagerEmitter.addListener(
       'BleManagerStopScan',
       () => {
         console.log('scan stopped');
-        this.props.fetchRestaurantsLoading(false)
+        this.props.fetchPeripheralsLoading(false)
         if(this.peripherals.length == 0){
           Alert.alert('Nothing found', "Sorry, no peripherals were found");
         }
@@ -134,69 +120,18 @@ class SearchRestaurant extends Component {
     );
   }
 
-  getPusherData () {
-    var pusher = new Pusher('627a447d139cd94fcfbb', {
-      cluster: 'ap1',
-      encrypted: true
-    });
-
-    var channel = pusher.subscribe('attendance-channel');
-    channel.bind('attendance-event', (data) => {
-      console.log('state attendance-event : ', data)
-      if(data.is_attendees) {
-        this.setState({
-          dataRestaurants: data.attendees
-        });
-      } else {
-        ToastAndroid.show(`${data.full_name} just entered the room!`, ToastAndroid.LONG);
-        this.setState({
-          dataRestaurants: [...this.state.dataRestaurants, data]
-        });
-      }
-    });
-  }
-
   handleScan = () => {
     console.log('state startScan', this.props)
-    this.props.fetchRestaurantsReset()
+    this.props.fetchPeripheralsReset()
     this.peripherals = [];
     this.setState({
       is_scanning: true
     })
-
-    this.props.fetchRestaurantsLoading(true)
-
+    this.props.fetchPeripheralsLoading(true)
     BleManager.scan([], 2)
     .then(() => {
       console.log('scan started');
     });
-  }
-
-  connect = (peripheralId = 'B8:27:EB:5F:7C:84') => {
-    console.log('state Connect Peripheral')
-    BleManager.connect(peripheralId)
-      .then(() => {
-        this.setState({
-          connected_peripheral: peripheralId
-        });
-        Alert.alert('Connected!', 'You are now connected to the peripheral.');
-        // retrieve the services advertised by this peripheral
-        BleManager.retrieveServices(peripheralId)
-          .then((peripheralInfo) => {
-            console.log('Peripheral info:', peripheralInfo);
-            BleManager.disconnect(peripheralId)
-              .then(() => {
-                Alert.alert('Attended', 'You have successfully attended the event, please disable bluetooth.');
-              })
-              .catch((error) => {
-                Alert.alert('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
-              });
-          })
-      })
-      .catch((error) => {
-        console.log(error)
-        Alert.alert("Err..", 'Something went wrong while trying to connect.');
-      });
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -204,13 +139,6 @@ class SearchRestaurant extends Component {
     const name = 'Search Restaurant'
     return {
       title: name,
-      headerRight:
-        <Icon
-        style={{ color: '#fff', marginRight: 15 }}
-        ios='ios-sync' android="md-sync"
-        size={35}
-        onPress={() => console.log(SearchRestaurant.handleScan())}
-        />,
       drawerIcon: ({ tintColor }) => (
         <Icon name="home" size={24} style={{ color: tintColor }} />
       ),
@@ -247,18 +175,13 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapStateToProps = state => ({
-  is_scanning: state.restaurants.is_scanning,
-  peripherals: state.restaurants.peripherals
-})
-
 const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchRestaurants,
-  fetchRestaurantsLoading,
-  fetchRestaurantsReset
+  fetchPeripherals,
+  fetchPeripheralsLoading,
+  fetchPeripheralsReset
 }, dispatch)
 
-const connectedSearchRestaurant = connect(mapStateToProps, mapDispatchToProps)(SearchRestaurant)
+const connectedSearchRestaurant = connect(null, mapDispatchToProps)(SearchRestaurant)
 
 export default connectedSearchRestaurant
 

@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux'
 
-import restaurants from './getRestaurantsReducers'
+import peripherals from './fetchPeripheralsReducers'
+import restaurant from './fetchRestaurantReducers'
+import customer from './fetchCustomerReducers'
 
 export default combineReducers({
-  restaurants
+  peripherals,
+  restaurant,
+  customer
 })

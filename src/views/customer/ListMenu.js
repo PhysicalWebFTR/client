@@ -6,7 +6,7 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 
 const Tabs = TabNavigator({
   FoodCategory: {
-    screen: MenuCategory,
+    screen: props => <MenuCategory category='food'/>,
     navigationOptions: ({ navigation }) => {
       return {
         tabBarLabel: 'Food',
