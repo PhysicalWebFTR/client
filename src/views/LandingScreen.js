@@ -27,7 +27,8 @@ class LandingScreen extends Component {
   }
 
   static navigationOptions = {
-    title: 'Login'
+    title: 'Login',
+    headerVisible: false
   }
 
   render() {

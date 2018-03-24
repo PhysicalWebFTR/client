@@ -1,4 +1,6 @@
 import React from 'react';
+import { Provider } from 'react-redux'
+import store from './src/store'
 
 import { StyleSheet, Text, Image, ScrollView } from 'react-native';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon } from 'native-base'
@@ -15,15 +17,19 @@ import ListMenuOwnerScreen from './src/views/owner/ListMenuOwner'
 import DetailMenuOwner from './src/components/owner/DetailMenu'
 import AddMenu from './src/components/owner/AddMenu'
 
-import LandingScreen from './src/views/LandingScreen'
+// import LandingScreen from './src/views/LandingScreen'
 import Register from './src/components/LandingScreen/Register'
+
+// import Home from './src/views/customer/Home'
 
 export default class App extends React.Component {
   render() {
     return (
-      <Container>
-        <RootStack />
-      </Container>
+      <Provider store={store}>
+        <Container>
+          <RootStack />
+        </Container>
+      </Provider>
     );
   }
 }
@@ -62,9 +68,9 @@ const Stack = {
   AddMenu: {
     screen: AddMenu
   },
-  LandingScreen: {
-    screen: LandingScreen
-  },
+  // LandingScreen: {
+  //   screen: LandingScreen
+  // },
   Register: {
     screen: Register
   }
@@ -72,10 +78,17 @@ const Stack = {
 
 
 const DrawerRoutes = {
+  LandingScreenStack: {
+    name: 'LandingScreenViewStack',
+    screen: StackNavigator(Stack, { 
+      initialRouteName: 'SearchRestaurant', 
+      navigationOptions: sharedNavigationOptions
+    })
+  },
   SearchRestaurantStack: {
     name: 'SearchRestaurantViewStack',
     screen: StackNavigator(Stack, { 
-      initialRouteName: 'LandingScreen', 
+      initialRouteName: 'SearchRestaurant', 
       navigationOptions: sharedNavigationOptions
     })
   }

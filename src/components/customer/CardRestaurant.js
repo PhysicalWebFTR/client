@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
 import { StyleSheet } from 'react-native'
 
 import {
@@ -15,6 +15,8 @@ import {
   Right
 } from 'native-base'
 
+import Spinner from 'react-native-spinkit'; // for showing a spinner when loading something 
+
 class CardRestaurant extends Component {
 
   constructor(props) {
@@ -27,31 +29,49 @@ class CardRestaurant extends Component {
   }
 
   render() {
-    
-    return (
-      <Container>
-        <Content style={styles.card}>
-          <Card >
-            <CardItem>
-              <Body style={styles.cardBody}>
-                <Left>
-                  <Text>
-                    Restaurant Name
-                  </Text>
-                </Left>
-                <Right>
-                  <Button success
-                    onPress={() => this._clickMoveToSelectMenu('-owuvgoe3f')}>
-                    <Text> Connect </Text>
-                  </Button>
-                </Right>
-
-              </Body>
-            </CardItem>
-          </Card>
-        </Content>
-      </Container>
-    )
+    if (this.props.is_scanning) {
+      return (
+        <Container style={styles.loading}>
+          <Spinner 
+            size={50} 
+            type={"WanderingCubes"} 
+            color={"#6097FC"} 
+            style={styles.spinner}
+          />
+        </Container>
+      )
+    } else if (this.props.peripherals) {
+      return (
+        <Container>
+          <Content style={styles.card}>
+          {
+            this.props.peripherals.map((peripheral, idx) =>(
+              <Card key={idx}>
+              <CardItem>
+                <Body style={styles.cardBody}>
+                  <Left>
+                    <Text>
+                      {peripheral.name}
+                    </Text>
+                  </Left>
+                  <Right>
+                    <Button success
+                      onPress={() => this._clickMoveToSelectMenu('-owuvgoe3f')}>
+                      <Text> Connect </Text>
+                    </Button>
+                  </Right>
+  
+                </Body>
+              </CardItem>
+            </Card>
+            ))
+          }
+          </Content>
+        </Container>
+      )
+    } else {
+      return ''
+    }
   }
 
 }
@@ -63,8 +83,19 @@ const styles = StyleSheet.create({
   cardBody: {
     display: 'flex',
     flexDirection: 'row'
+  },
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 })
 
+const mapStateToProps = state => ({
+  is_scanning: state.restaurants.is_scanning,
+  peripherals: state.restaurants.peripherals
+})
 
-export default CardRestaurant
+const connectedCardRestaurant = connect(mapStateToProps)(CardRestaurant)
+
+export default connectedCardRestaurant

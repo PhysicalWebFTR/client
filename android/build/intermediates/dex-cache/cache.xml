@@ -3,6 +3,24 @@
 
     <item
         is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/client/react-native-spinkit/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c468895da285e0fc315782e2900cbcc2eca246b6">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-spinkit-unspecified_6662067d7ec03f46637e4e2f28aaf9bf7da71688.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/client/react-native-ble-manager/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="39eecdadd7aaef3ce8931aac316d919d4d605ed8">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-ble-manager-unspecified_23d44ad409135f61b5c334064589cf4e4028388c.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
@@ -63,6 +81,15 @@
         revision="25.0.2"
         sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
         <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_9ff0217466f6792bd72070a3ae5ee03f67fb2ef8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.github.ybq/Android-SpinKit/1.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="21c0f1b0de29bfe601028757c5cb125c343f5164">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.github.ybq-Android-SpinKit-1.1.0_2ee348e659fa84b673e79070818d70675f855588.jar" />
     </item>
     <item
         is-multidex="false"
