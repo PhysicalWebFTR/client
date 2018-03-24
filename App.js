@@ -25,7 +25,7 @@ import Register from './src/components/LandingScreen/Register'
 export default class App extends React.Component {
   render() {
     return (
-      <OrderSummaryScreen/>
+      <ListMenuCustomerScreen/>
       // <Provider store={store}>
       //   <Container>
       //     <RootStack />
