@@ -38,6 +38,17 @@ const Tabs = TabNavigator({
     tabBarOptions: {
       scrollEnabled: true,
       activeTintColor: '#fff',
+      animationEnabled: true,
+      tabStyle: {
+        width: 136
+      },
+      labelStyle: {
+        fontSize: 16,
+        fontWeight: 'bold'
+      },
+      style: {
+        backgroundColor: 'orange'
+      }
     },
   }
 )

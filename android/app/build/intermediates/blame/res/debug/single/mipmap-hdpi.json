@@ -2,5 +2,9 @@
     {
         "merged": "/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
         "source": "/home/fuadi/Documents/fase-3/week-3/final/client/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/tobiaskusnaman/Documents/finalProject/client/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/Users/tobiaskusnaman/Documents/finalProject/client/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     }
 ]
