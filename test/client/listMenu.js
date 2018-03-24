@@ -1,11 +1,14 @@
 import React from 'react';
-import ListMenuCustomer from '../.././src/views/customer/ListMenuCustomer'
+
+import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
+import Enzyme, { shallow, render, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import ListMenu from '../.././src/views/customer/ListMenu'
+
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import MenuCategory from '../.././src/components/customer/MenuCategory'
 import { Container } from 'native-base';
-
-// import Enzyme, { shallow, render, mount } from 'enzyme';
-
 
 export default describe('List Menu Customer', () => {
   const Tabs = TabNavigator({
@@ -45,16 +48,13 @@ export default describe('List Menu Customer', () => {
       },
     }
   )
-
-  it('should contain tabs', () => {
-    const wrapper = shallow(
-      <ListMenuCustomer/>
-    )
-    expect(wrapper.containsAnyMatchingElements([
-      <Container>
-          <Tabs />
-        </Container>
-    ]))
-  })
+  // it('should contain tabs', () => {
+  //   const wrapper = shallow(
+  //     <ListMenu/>
+  //   )
+  //   expect(wrapper.containsAnyMatchingElements([
+  //     <Container/>
+  //   ])).toEqual(true)
+  // })
   
 })

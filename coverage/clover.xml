@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1521871885387" clover="3.2.0">
-  <project timestamp="1521871885387" name="All files">
-    <metrics statements="118" coveredstatements="30" conditionals="2" coveredconditionals="0" methods="75" coveredmethods="8" elements="195" coveredelements="38" complexity="0" loc="118" ncloc="118" packages="8" files="15" classes="15">
+<coverage generated="1521874610674" clover="3.2.0">
+  <project timestamp="1521874610674" name="All files">
+    <metrics statements="131" coveredstatements="37" conditionals="2" coveredconditionals="0" methods="85" coveredmethods="12" elements="218" coveredelements="49" complexity="0" loc="131" ncloc="131" packages="10" files="17" classes="17">
       <package name="client">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <file name="App.js" path="/Users/tobiaskusnaman/Documents/finalProject/client/App.js">
           <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-          <line num="23" count="2" type="stmt"/>
-          <line num="31" count="10" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="31" count="5" type="stmt"/>
           <line num="43" count="1" type="stmt"/>
           <line num="74" count="1" type="stmt"/>
           <line num="85" count="1" type="stmt"/>
-          <line num="92" count="2" type="stmt"/>
+          <line num="92" count="1" type="stmt"/>
           <line num="116" count="1" type="stmt"/>
         </file>
       </package>
@@ -111,12 +111,12 @@
         <metrics statements="11" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
         <file name="LandingScreen.js" path="/Users/tobiaskusnaman/Documents/finalProject/client/src/views/LandingScreen.js">
           <metrics statements="11" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
-          <line num="20" count="2" type="stmt"/>
-          <line num="21" count="2" type="stmt"/>
+          <line num="20" count="1" type="stmt"/>
+          <line num="21" count="1" type="stmt"/>
           <line num="25" count="0" type="stmt"/>
           <line num="26" count="0" type="stmt"/>
-          <line num="34" count="2" type="stmt"/>
-          <line num="35" count="2" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="35" count="1" type="stmt"/>
           <line num="45" count="0" type="stmt"/>
           <line num="53" count="0" type="stmt"/>
           <line num="62" count="0" type="stmt"/>
@@ -187,6 +187,31 @@
           <line num="36" count="0" type="stmt"/>
           <line num="37" count="0" type="stmt"/>
           <line num="53" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="client.test.client">
+        <metrics statements="10" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="2"/>
+        <file name="listMenu.js" path="/Users/tobiaskusnaman/Documents/finalProject/client/test/client/listMenu.js">
+          <metrics statements="10" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="2"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="49" count="1" type="stmt"/>
+          <line num="50" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="client.test.owner">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="listMenu.js" path="/Users/tobiaskusnaman/Documents/finalProject/client/test/owner/listMenu.js">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
         </file>
       </package>
     </metrics>

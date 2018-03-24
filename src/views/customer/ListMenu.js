@@ -62,11 +62,10 @@ class ListMenu extends Component {
   render() {
     return (
       <Container>
-        <Tabs />
+        <Tabs/>
       </Container>
     )
   }
-
 }
 
 export default ListMenu
