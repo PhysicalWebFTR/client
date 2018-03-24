@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Alert } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, Left, Right, Button } from 'native-base';
 
 class OrderSummary extends Component {
@@ -31,7 +31,7 @@ class OrderSummary extends Component {
       title: name
     }
   }
-
+  
   render() {
     return (
       <Content>
@@ -51,7 +51,7 @@ class OrderSummary extends Component {
                     </Text>
                   </Left>
                   <Right>
-                    <Text>
+                    <Text style={{margin:5}}>
                       {list.price}
                     </Text>
                   </Right>
@@ -64,11 +64,32 @@ class OrderSummary extends Component {
                       <Button 
                         style={styles.button} bordered warning
                         onPress={() => {
-                          // TODO: ini minus nya ya
-                          this.setState({
-                            menuId: list.menuId,
-                            quantity: list.quantity--
-                          })
+                          console.log(list.quantity)
+                          if (list.quantity > 1) {
+                            this.setState({
+                              menuId: list.menuId,
+                              quantity: list.quantity--
+                            })
+                          } else {
+                            Alert.alert(
+                              'Remove Item?',
+                              'This item will be removed from your cart',
+                              [
+                                {
+                                  text: 'Yes', onPress: () => {
+                                    let foods = this.state.orderLists
+                                    var index = foods.findIndex(food => {
+                                      return food.menuId === list.menuId
+                                    })
+                                    foods.splice(index, 1);
+                                    this.setState({orderLists: foods})
+                                  }
+                                },
+                                {text: 'No'},
+                              ],
+                              { cancelable: false }
+                            )
+                          }
                         }}
                         >
                         <Text style={styles.insideButton}>-</Text>

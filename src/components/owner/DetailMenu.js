@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {  View, Image } from 'react-native';
+import {  View, Image, TouchableOpacity } from 'react-native';
 import { Container, Header, Content, Icon, Card, CardItem, Thumbnail, Text, Button, Left, Body, Right } from 'native-base';
-
 import EditMenu from './EditMenu'
 
 export default class DetailMenu extends Component {

@@ -16,7 +16,7 @@ import OrderSummaryScreen from './src/views/customer/OrderSummary'
 import ListMenuOwnerScreen from './src/views/owner/ListMenuOwner'
 import DetailMenuOwner from './src/components/owner/DetailMenu'
 import AddMenu from './src/components/owner/AddMenu'
-
+import EditMenu from './src/components/owner/EditMenu'
 // import LandingScreen from './src/views/LandingScreen'
 import Register from './src/components/LandingScreen/Register'
 
@@ -25,18 +25,19 @@ import Register from './src/components/LandingScreen/Register'
 export default class App extends React.Component {
   render() {
     return (
-      <Provider store={store}>
-        <Container>
-          <RootStack />
-        </Container>
-      </Provider>
+      <OrderSummaryScreen/>
+      // <Provider store={store}>
+      //   <Container>
+      //     <RootStack />
+      //   </Container>
+      // </Provider>
     );
   }
 }
 
 const sharedNavigationOptions = ({ navigation }) => ({
   headerStyle: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#f7b734',
     paddingLeft: 12
   },
   headerTintColor: '#fff',

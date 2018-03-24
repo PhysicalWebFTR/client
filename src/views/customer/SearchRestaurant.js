@@ -12,9 +12,8 @@ import {
   ToastAndroid, // for showing notification if there's a new attendee
   FlatList, // for creating lists
   Alert,
-  Button
 } from 'react-native';
-import { Container, Icon, Text } from 'native-base'
+import { Container, Icon, Text, Button } from 'native-base'
 
 import BleManager from 'react-native-ble-manager'; // for talking to BLE peripherals
 const BleManagerModule = NativeModules.BleManager;
@@ -229,7 +228,20 @@ class SearchRestaurant extends Component {
     return (
       <Container>
         <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
-          <Button title="Scan" onPress={() => this.handleScan()}></Button>
+          <Button
+            onPress={() => this.handleScan()}
+            style={{
+              margin: 5,
+              flex: 1,
+              justifyContent: 'center',
+              backgroundColor: '#0e4749'
+            }}
+          >
+            <Text>
+              SCAN
+            </Text>
+          </Button>
+          {/* <Button color="#0e4749" title="Scan" onPress={() => this.handleScan()}></Button> */}
           {/* <Button title="Connect" onPress={() => this.connect('74:C6:3B:04:2B:32')}></Button> */}
         </View>
         <CardRestaurant navigation={navigation}/>
