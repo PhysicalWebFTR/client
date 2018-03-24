@@ -29,8 +29,7 @@ export default class AddMenu extends Component {
 
   handleSubmit = (e) => {
     this.bounce()
-    // e.preventDefault()
-    console.log('hai')
+    e.preventDefault()
   }
   handleViewRef = ref => this.view = ref;
 
