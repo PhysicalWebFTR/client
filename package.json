@@ -4,6 +4,9 @@
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "enzyme-to-json": "3.3.3",
     "jest-react-native": "^18.0.0",
     "react-test-renderer": "16.2.0"
   },
@@ -11,18 +14,23 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "node node_modules/jest/bin/jest.js"
+    "test": "nodemon node_modules/jest/bin/jest.js"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base)/"
+    ]
   },
   "dependencies": {
     "bytes-counter": "^1.0.0",
     "convert-string": "^0.1.0",
+    "jest": "22.4.3",
     "native-base": "^2.3.10",
     "pusher-js": "^4.2.2",
     "random-id": "^0.0.2",
     "react": "16.2.0",
+    "react-dom": "16.2.0",
     "react-native": "0.52.0",
     "react-native-ble-manager": "^6.2.8",
     "react-native-spinkit": "^1.1.1",
