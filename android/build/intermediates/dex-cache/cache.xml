@@ -3,24 +3,6 @@
 
     <item
         is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/client/react-native-spinkit/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c468895da285e0fc315782e2900cbcc2eca246b6">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-spinkit-unspecified_6662067d7ec03f46637e4e2f28aaf9bf7da71688.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/client/react-native-ble-manager/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="39eecdadd7aaef3ce8931aac316d919d4d605ed8">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-ble-manager-unspecified_23d44ad409135f61b5c334064589cf4e4028388c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
@@ -30,21 +12,66 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.0/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_7f5fdc37c333473be59387e5d954862b8331a763.jar" />
+        sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/support-annotations-27.1.0_e2789b01ef4993695c5046b3c88a2d362236c709.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/fuadi/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_9ce466f6f852c1725b0ea06d12077fa81ae0e922.jar" />
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_9ff0217466f6792bd72070a3ae5ee03f67fb2ef8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/client/react-native-camera/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="86f563b431b54a4bc640324e0c04e9146e9cda97">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-camera-unspecified_0c0509687630d8c2bc4321a31258e6374de521ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_d1a1d231c93e17406c6b5f94c85a75ea5e00a5d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_b323a89dd07c8fc59cc1e84a6de2d7bbaa8604c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_90398a9a96407190d4aa70fa95454b86e4e9755c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.0.1_13fcc9ccc1188d8051eef5e59815ff9e38e38d4e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -57,30 +84,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_e6211dc498dded18281afad82a79a65ba154df6d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_a70c41270ecbd16103a77d8732410c29f489828b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_9ff0217466f6792bd72070a3ae5ee03f67fb2ef8.jar" />
+        sha1="71af915b7f4f7ec0b5f768b365145bb6a5cb9a66">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-26.0.1_37aeaf518fef1d61edc0252fb44d426667ec7c0f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -102,39 +111,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/libs/infer-annotations-4.0.jar"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/exifinterface/27.1.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_d1a1d231c93e17406c6b5f94c85a75ea5e00a5d6.jar" />
+        sha1="0d6df4057d1620a785f5bd2e69dd0d7866f3613c">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-exifinterface-27.1.0_133e25324d14fd5d8b4860eaa54c02fd76b3f508.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_312bd03fa3276554548c12f41186e89e4256eb63.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_b323a89dd07c8fc59cc1e84a6de2d7bbaa8604c3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="af61eb11ffb4296cab0c93218248a3dfcec0a84c">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.52.0_3400d4624d375977a430d29a096c53285a79b309.jar" />
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.0_0cb561a19a9e1653bc8cfc7c48d78cd38e3dbfe9.jar" />
     </item>
     <item
         is-multidex="false"
@@ -156,6 +147,177 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_4b6565b0a7e41c2754b78140c46e88aabd0ddaf3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a4590fa7eadce322ca893129fdc999074e1aa5bf">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.0.1_fde25fe6ffab9d6013f611469c50d91a41215218.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_dfb2de4b6a7562a2b66304e4e82da6b5410db534.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/client/react-native-ble-manager/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="39eecdadd7aaef3ce8931aac316d919d4d605ed8">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-ble-manager-unspecified_23d44ad409135f61b5c334064589cf4e4028388c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="22c673e65215e0764add61e3102946de895439e4">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.0.1_5510006f3dcfb4176008ddac36fc6b8923495fb5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_a70c41270ecbd16103a77d8732410c29f489828b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dff4d8f88fe2c0e57306e6981fd9b90caeead7e3">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-26.0.1_7532e7b1e3d6ba1a71dab64e1e756a8900630410.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.drewnoakes/metadata-extractor/2.9.1/53fdf22be10c9d426ec63431c7342895bc642261/metadata-extractor-2.9.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="53fdf22be10c9d426ec63431c7342895bc642261">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/metadata-extractor-2.9.1_28f9028e3e8b546b33a6abb293b27d725bedae59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.1/2287494d4f5f9f3a9a2bb6980e3f32053721b315/core-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/core-3.2.1_43027b18cd1d45b83b034d8915c7c19a9032eb0e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.adobe.xmp/xmpcore/5.1.2/55615fa2582424e38705487d1d3969af8554f637/xmpcore-5.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="55615fa2582424e38705487d1d3969af8554f637">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/xmpcore-5.1.2_5fd215eb06cd4e77cfcfaaba3750dac23ca48371.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.0_b01c089346454d2c0d21c5acee3bece18a8e00cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="444f9de23145e8caba7bf1c1772acad142ea6013">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-vision-10.2.0_3ed92d37ed345ae1c26d5c3143b559e76f8b3d12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/client/react-native-spinkit/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c468895da285e0fc315782e2900cbcc2eca246b6">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-spinkit-unspecified_6662067d7ec03f46637e4e2f28aaf9bf7da71688.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d095503f29a8dedc55b9326ed97a5902a1527ab9">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.1_75c063908c57d0d8922eb0bb4c0e91f1e0dfa82a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_e6211dc498dded18281afad82a79a65ba154df6d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_312bd03fa3276554548c12f41186e89e4256eb63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="af61eb11ffb4296cab0c93218248a3dfcec0a84c">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.52.0_3400d4624d375977a430d29a096c53285a79b309.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.0_f7dd31e823921a828b9135d92b9cb98e68948777.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.github.react-native-community/cameraview/d529251d24c0a367a28eea28f0eac2269d12f772/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e64d3bd4020c2600a42923c3b493bbb2e81f1211">
+        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.github.react-native-community-cameraview-d529251d24c0a367a28eea28f0eac2269d12f772_ae372a087dc46092e2de98b3337ec0e7625bdc58.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/fuadi/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
@@ -174,48 +336,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_4b6565b0a7e41c2754b78140c46e88aabd0ddaf3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_90398a9a96407190d4aa70fa95454b86e4e9755c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
         <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_2760f1ad1ff7b4028e6a517289faa51137397143.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_dfb2de4b6a7562a2b66304e4e82da6b5410db534.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_94648aee852b6ce201f24ec20973965c3acbc823.jar" />
     </item>
 
 </items>

@@ -27,7 +27,7 @@ class MenuCategory extends Component {
     console.log('ini props: ', this.props)
   }
 
-  _keyExtractor = (item, index) => item.itemId
+  _keyExtractor = (item, index) => index
 
   render() {
 

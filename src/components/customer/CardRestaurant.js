@@ -89,6 +89,7 @@ class CardRestaurant extends Component {
     var channel = pusher.subscribe('restaurant-channel');
     channel.bind('get-restaurant-event', (data) => {
       console.log('state restaurant-event : ', data)
+      console.log(new Date().getMilliseconds())
       this.props.fetchCustomerRestaurantId(data.id)
       this.props.fetchRestaurant(data)
       const { navigate } = this.props.navigation

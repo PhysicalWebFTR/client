@@ -84,7 +84,7 @@ class SearchRestaurant extends Component {
   addListenerDiscoverPeripheral() {
     bleManagerEmitter.addListener('BleManagerDiscoverPeripheral', (peripheral) => {
       // console.log('state addListenerDiscoverPeri Before: ', peripheral)
-      if (peripheral.name === 'Central Resto' || peripheral.name === 'Fuadi Resto') {
+      if (peripheral.name) {
         console.log('state addListenerDiscoverPeri Fix : ', peripheral)
         var peripherals = this.peripherals;
         // check if the peripheral already exists 

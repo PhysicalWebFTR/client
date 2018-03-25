@@ -20,14 +20,14 @@ import AddMenu from './src/components/owner/AddMenu'
 // import LandingScreen from './src/views/LandingScreen'
 import Register from './src/components/LandingScreen/Register'
 
-// import Home from './src/views/customer/Home'
+import Home from './src/views/customer/Home'
 
 export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
         <Container>
-          <RootStack />
+          <Home />
         </Container>
       </Provider>
     );

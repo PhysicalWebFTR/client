@@ -1,4 +1,4 @@
-#Sat Mar 24 12:13:20 WIB 2018
+#Sun Mar 25 20:49:23 WIB 2018
 base.0=/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/home/fuadi/Documents/fase-3/week-3/final/client/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
