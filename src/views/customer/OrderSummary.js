@@ -2,31 +2,11 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Alert } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, Left, Right, Button } from 'native-base';
 
-import * as Animatable from 'react-native-animatable';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { addItemAction } from '../../store/actions'
 
 class OrderSummary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        orderLists: [
-          {
-            menuId: 'Indomie Carbonara',
-            quantity: 3,
-            price: 22000
-          },{
-            menuId: 'Sushimie',
-            quantity: 2,
-            price: 18000
-          }, {
-            menuId: 'ketigadsfad',
-            quantity: 1,
-            price: 12000
-          }
-        ]
-    };
-
-  }
-
   static navigationOptions = ({ navigation }) => {
     const name = 'Order Summary'
     return {
@@ -37,13 +17,18 @@ class OrderSummary extends Component {
   showAlert(menuId) {
     let foods = this.state.orderLists
     var index = foods.findIndex(food => {
-      return food.menuId === menuId
+      return foodRootStack.menuId === menuId
     })
     foods.splice(index, 1);
     this.setState({orderLists: foods})
     if (foods.length == 0) {
       console.log('Pindah cuy')
     }
+  }
+
+  handleAdd(item) {
+    console.log('ini item', item)
+    this.props.addItemAction(item, this.props.menuList)
   }
   
   render() {
@@ -55,13 +40,13 @@ class OrderSummary extends Component {
               Items to order
             </Text>
           </CardItem>
-          { this.state.orderLists.map( list => {
+          { this.props.menuList.map( list => {
             return (
               <CardItem key={list.menuId} bordered style={{flex: 1, flexWrap: 'wrap'}}>
                 <View style={styles.container}>
                   <Left>
                     <Text>
-                      {list.menuId}
+                      {list.name}
                     </Text>
                   </Left>
                   <Right>
@@ -75,7 +60,7 @@ class OrderSummary extends Component {
                   </Left>
                   <Right>
                     <View style={{flex: 1, flexDirection:'row'}}>
-                      <Button 
+                    <Button 
                         style={styles.button} bordered warning
                         onPress={() => {
                           if (list.quantity > 1) {
@@ -107,12 +92,7 @@ class OrderSummary extends Component {
                       </Button>
                       <Button 
                         style={styles.button} bordered warning
-                        onPress={() => {
-                          this.setState({
-                            menuId: list.menuId,
-                            quantity: list.quantity++
-                          })
-                        }}
+                        onPress={() => this.handleAdd(list)}
                       >
                         <Text style={styles.insideButton}>+</Text>
                       </Button>
@@ -153,4 +133,12 @@ const styles = StyleSheet.create({
   }
 });
 
-export default OrderSummary;
+const mapStateToProps = state => ({
+  menuList: state.customer.menuList
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  addItemAction
+}, dispatch)
+
+export default connect(mapStateToProps,mapDispatchToProps)(OrderSummary)

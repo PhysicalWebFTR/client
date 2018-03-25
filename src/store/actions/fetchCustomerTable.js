@@ -19,10 +19,13 @@ export function fetchCustomerRestaurantId (restId) {
 }
 
 export function addItemAction (item, menuList) {
+  console.log('item actions', item)
+  console.log('menu list actions', menuList)
   let index = menuList.findIndex(menu => {
     return menu.id === item.id
   })
 
+  console.log('index cuys', index)
   if (index == -1) {
     item.quantity = 1
     menuList.push(item)
@@ -34,4 +37,4 @@ export function addItemAction (item, menuList) {
     type: ADD_ITEM,
     payload: menuList
   }
-}
+} 
