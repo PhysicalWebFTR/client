@@ -27,7 +27,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <Container>
-          <Home />
+          <RootStack />
         </Container>
       </Provider>
     );
@@ -155,3 +155,4 @@ const styles = StyleSheet.create({
     color: '#fff'
   }
 })
+

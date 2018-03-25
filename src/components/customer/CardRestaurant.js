@@ -128,8 +128,12 @@ class CardRestaurant extends Component {
                     </Text>
                   </Left>
                   <Right>
-                    <Button success
+                    {/* <Button success
                       onPress={() => this.connect(peripheral.id)}>
+                      <Text> Connect </Text>
+                    </Button> */}
+                    <Button success
+                      onPress={() => this.props.navigation.navigate('SelectTable')}>
                       <Text> Connect </Text>
                     </Button>
                   </Right>

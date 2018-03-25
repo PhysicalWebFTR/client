@@ -1,13 +1,15 @@
 import {
   FETCH_TABLE_NUM,
-  FETCH_CUST_REST_ID
+  FETCH_CUST_REST_ID,
+  ADD_ITEM
 } from '../actionTypes'
 
 const initialState = {
   idCustomer: String(Math.floor(Math.random()*80808)),
   idRestaurant: '',
   idTable: '',
-  menuList: []
+  menuList: [],
+  orderList: []
 }
 
 export default function fetchCustomerReducers (state = {...initialState}, action) {
@@ -21,6 +23,11 @@ export default function fetchCustomerReducers (state = {...initialState}, action
       return ({
         ...state,
         idRestaurant: action.payload
+      })
+    case ADD_ITEM:
+      return ({
+        ...state,
+        orderList: [...state.orderList, action.payload]
       })
     default:
       return state
