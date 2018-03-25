@@ -24,5 +24,6 @@ export {
   fetchRestaurant,
   fetchPeripheralDetail,
   fetchCustomerTable,
-  fetchCustomerRestaurantId
+  fetchCustomerRestaurantId,
+  addItemAction
 }

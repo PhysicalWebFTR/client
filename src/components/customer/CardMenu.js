@@ -15,7 +15,7 @@ import {
 } from 'native-base'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import addItemAction from '../../store/actions'
+import { addItemAction } from '../../store/actions'
 
 class CardMenu extends Component {
   constructor(props){
@@ -43,7 +43,10 @@ class CardMenu extends Component {
           <CardItem>
             <Button 
               block success style={styles.button}
-              onPress={() => this.props.addItemAction(foodItem)}  
+              onPress={() => {
+                console.log('ini additem action',this.props.addItemAction )
+                this.props.addItemAction(foodItem, this.props.menuList)
+              }}  
             >
               <Text>Add</Text>
             </Button>
@@ -71,8 +74,12 @@ const styles = StyleSheet.create({
   }
 })
 
+const mapStateToProps = state => ({
+  menuList : state.customer.menuList
+})
+
 const mapDispatchToProps = dispatch => bindActionCreators({
   addItemAction
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(CardMenu)
+export default connect(mapStateToProps, mapDispatchToProps)(CardMenu)

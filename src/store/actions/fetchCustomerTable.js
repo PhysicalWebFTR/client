@@ -18,10 +18,20 @@ export function fetchCustomerRestaurantId (restId) {
   }
 }
 
-export function addItemAction (item) {
-  console.log('item di action', item)
+export function addItemAction (item, menuList) {
+  let index = menuList.findIndex(menu => {
+    return menu.id === item.id
+  })
+
+  if (index == -1) {
+    item.quantity = 1
+    menuList.push(item)
+  } else {
+    menuList[index].quantity++
+  }
+
   return {
     type: ADD_ITEM,
-    payload: item
+    payload: menuList
   }
 }

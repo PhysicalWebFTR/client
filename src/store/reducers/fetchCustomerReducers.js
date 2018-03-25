@@ -8,8 +8,7 @@ const initialState = {
   idCustomer: String(Math.floor(Math.random()*80808)),
   idRestaurant: '',
   idTable: '',
-  menuList: [],
-  orderList: []
+  menuList: []
 }
 
 export default function fetchCustomerReducers (state = {...initialState}, action) {
@@ -27,7 +26,7 @@ export default function fetchCustomerReducers (state = {...initialState}, action
     case ADD_ITEM:
       return ({
         ...state,
-        orderList: [...state.orderList, action.payload]
+        menuList: action.payload
       })
     default:
       return state
