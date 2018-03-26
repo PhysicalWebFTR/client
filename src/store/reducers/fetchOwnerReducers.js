@@ -1,5 +1,6 @@
 import {
-  FETCH_OWNER
+  FETCH_OWNER,
+  CHANGE_STATUS_READY
 } from '../actionTypes'
 
 const initialState = {
@@ -56,6 +57,10 @@ export default function fetchOwnerReducers (state = {...initialState}, action) {
     case FETCH_OWNER:
       return ({
         ...state,
+      })
+    case CHANGE_STATUS_READY:
+      return ({
+        ...action.payload
       })
       break;
     default:

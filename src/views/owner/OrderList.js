@@ -3,20 +3,31 @@ import { StyleSheet, View, Text, FlatList } from 'react-native';
 import { Card, CardItem, Body, Left, Right, Button } from 'native-base';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
+import { changeStatusAction } from '../../store/actions/fetchOwners' 
 class OrderList extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      isRefresh: false
+    }
   }
 
+  // handleButton = (item) => {
+  //   let itemStates = this.state.orderLists
+  //   let index = itemStates.findIndex(itemState => {
+  //     return itemState.menuId._id === item.menuId._id
+  //   })
+  //   itemStates[index].isReady = !item.isReady
+  //   this.setState({
+  //     itemStates
+  //   })
+  // }
+
   handleButton = (item) => {
-    let itemStates = this.state.orderLists
-    let index = itemStates.findIndex(itemState => {
-      return itemState.menuId._id === item.menuId._id
-    })
-    itemStates[index].isReady = !item.isReady
+    this.props.changeStatusAction(item, this.props.orderLists)
+    let isRefresh = !this.state.isRefresh
     this.setState({
-      itemStates
+      isRefresh
     })
   }
 
@@ -24,7 +35,7 @@ class OrderList extends Component {
     return (
       <View>
         <FlatList
-          extraData={this.state}
+          extraData={this.state.isRefresh}
           data={this.props.orderLists}
           renderItem={({item}) => (
             <Card>
@@ -86,4 +97,8 @@ const mapStateToProps = state => ({
   orderLists: state.owner.orderLists
 })
 
-export default connect(mapStateToProps)(OrderList)
+const mapDispatchToProps = dispatch => ({
+  changeStatusAction
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(OrderList)
