@@ -132,8 +132,12 @@ class CardRestaurant extends Component {
                       onPress={() => this.connect(peripheral.id)}>
                       <Text> Connect </Text>
                     </Button> */}
-                    <Button success
+                    {/* <Button success
                       onPress={() => this.props.navigation.navigate('SelectTable')}>
+                      <Text> Connect </Text>
+                    </Button> */}
+                    <Button success
+                      onPress={() => this.props.navigation.navigate('ListMenu')}>
                       <Text> Connect </Text>
                     </Button>
                   </Right>

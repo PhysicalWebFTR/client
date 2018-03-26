@@ -110,7 +110,7 @@ class SearchRestaurant extends Component {
         console.log('scan stopped');
         this.props.fetchPeripheralsLoading(false)
         if(this.peripherals.length == 0){
-          Alert.alert('Nothing found', "Sorry, no peripherals were found");
+          Alert.alert('Restaurant not found', "Please try again");
         }
         this.setState({
           is_scanning: false,

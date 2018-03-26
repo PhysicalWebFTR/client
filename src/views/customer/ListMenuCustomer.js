@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'react-native'
 import { Container, Text, Icon } from 'native-base'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'

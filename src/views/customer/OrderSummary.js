@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Alert } from 'react-native';
+import React, { PureComponent } from 'react';
+import { StyleSheet, View, Alert, FlatList } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, Left, Right, Button } from 'native-base';
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addItemAction } from '../../store/actions'
 
-class OrderSummary extends Component {
+class OrderSummary extends PureComponent {
+  constructor () {
+    super()
+    this.state = {
+      isRefresh: false,
+      totalPrice: 0
+    }
+  }
+
   static navigationOptions = ({ navigation }) => {
     const name = 'Order Summary'
     return {
@@ -25,13 +33,35 @@ class OrderSummary extends Component {
       console.log('Pindah cuy')
     }
   }
+  componentDidMount () {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue
+    let totalPrice = this.props.menuList.map(item => item.price * item.quantity)
+    totalPrice = totalPrice.reduce(reducer)
+    this.setState({totalPrice})
+  }
+
+  componentDidUpdate () {
+    console.log('menu list: ', this.props.menuList)
+    const reducer = (accumulator, currentValue) => accumulator + currentValue
+    let totalPrice = this.props.menuList.map(item => item.price * item.quantity)
+    totalPrice = totalPrice.reduce(reducer)
+    this.setState({totalPrice})
+  }
 
   handleAdd(item) {
+    let isRefresh = !this.state.isRefresh
+    this.setState({
+      isRefresh
+    })
+    console.log(this.state.isRefresh)
     console.log('ini item', item)
     this.props.addItemAction(item, this.props.menuList)
   }
   
   render() {
+    // const reducer = (accumulator, currentValue) => accumulator + currentValue
+    // let totalPrice = this.props.menuList.map(item => item.price)
+    // console.log('ini total price: ', totalPrice)
     return (
       <Content>
         <Card>
@@ -40,18 +70,22 @@ class OrderSummary extends Component {
               Items to order
             </Text>
           </CardItem>
-          { this.props.menuList.map( list => {
-            return (
-              <CardItem key={list.menuId} bordered style={{flex: 1, flexWrap: 'wrap'}}>
+          <FlatList
+            data={this.props.menuList}
+            extraData={this.state.isRefresh}
+            renderItem={({item}) => {
+                        
+              return (
+              <CardItem key={item.menuId} bordered style={{flex: 1, flexWrap: 'wrap'}}>
                 <View style={styles.container}>
                   <Left>
                     <Text>
-                      {list.name}
+                      {item.name}
                     </Text>
                   </Left>
                   <Right>
                     <Text style={{margin:5}}>
-                      {list.price}
+                      Rp. {item.price}
                     </Text>
                   </Right>
                 </View>
@@ -63,10 +97,10 @@ class OrderSummary extends Component {
                     <Button 
                         style={styles.button} bordered warning
                         onPress={() => {
-                          if (list.quantity > 1) {
+                          if (item.quantity > 1) {
                             this.setState({
-                              menuId: list.menuId,
-                              quantity: list.quantity--
+                              menuId: item.menuId,
+                              quantity: item.quantity--
                             })
                           } else {
                             Alert.alert(
@@ -75,7 +109,7 @@ class OrderSummary extends Component {
                               [
                                 {
                                   text: 'Yes', onPress: () => {
-                                    this.showAlert(list.menuId)
+                                    this.showAlert(item.menuId)
                                   }
                                 },
                                 {text: 'No'},
@@ -88,11 +122,11 @@ class OrderSummary extends Component {
                         <Text style={styles.insideButton}>-</Text>
                       </Button>
                       <Button style={styles.button} bordered warning>
-                        <Text style={styles.insideButton}>{list.quantity}</Text>
+                        <Text style={styles.insideButton}>{item.quantity}</Text>
                       </Button>
                       <Button 
                         style={styles.button} bordered warning
-                        onPress={() => this.handleAdd(list)}
+                        onPress={() => this.handleAdd(item)}
                       >
                         <Text style={styles.insideButton}>+</Text>
                       </Button>
@@ -100,10 +134,11 @@ class OrderSummary extends Component {
                   </Right>
                 </View>
               </CardItem>
-            )
-          })}
-          
+            )}
+          }
+          />
         </Card>
+        <Text>{this.state.totalPrice}</Text>
         <View>
           <Button style={styles.submit} block warning>
             <Text> Order </Text>
