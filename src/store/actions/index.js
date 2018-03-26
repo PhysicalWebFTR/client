@@ -13,7 +13,8 @@ import {
 import { 
   fetchCustomerTable,
   fetchCustomerRestaurantId,
-  addItemAction
+  addItemAction,
+  removeItemAction
 } from './fetchCustomerTable'
 
 export {
@@ -25,5 +26,6 @@ export {
   fetchPeripheralDetail,
   fetchCustomerTable,
   fetchCustomerRestaurantId,
-  addItemAction
+  addItemAction,
+  removeItemAction
 }

@@ -4,7 +4,7 @@ import { Container, Header, Content, Card, CardItem, Body, Text, Left, Right, Bu
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { addItemAction } from '../../store/actions'
+import { addItemAction, removeItemAction } from '../../store/actions'
 
 class OrderSummary extends PureComponent {
   constructor () {
@@ -33,35 +33,59 @@ class OrderSummary extends PureComponent {
       console.log('Pindah cuy')
     }
   }
-  componentDidMount () {
+
+  generateTotalprice = () => {
     const reducer = (accumulator, currentValue) => accumulator + currentValue
     let totalPrice = this.props.menuList.map(item => item.price * item.quantity)
     totalPrice = totalPrice.reduce(reducer)
     this.setState({totalPrice})
+  }
+
+  componentDidMount () {
+    this.generateTotalprice()
   }
 
   componentDidUpdate () {
-    console.log('menu list: ', this.props.menuList)
-    const reducer = (accumulator, currentValue) => accumulator + currentValue
-    let totalPrice = this.props.menuList.map(item => item.price * item.quantity)
-    totalPrice = totalPrice.reduce(reducer)
-    this.setState({totalPrice})
+    this.generateTotalprice()
   }
 
-  handleAdd(item) {
+  refreshPage = () => {
     let isRefresh = !this.state.isRefresh
     this.setState({
       isRefresh
     })
-    console.log(this.state.isRefresh)
-    console.log('ini item', item)
+  }
+
+  handleAdd(item) {
     this.props.addItemAction(item, this.props.menuList)
+    this.refreshPage()
+  }
+
+  handleRemove = (item) => {
+    this.props.removeItemAction(item, this.props.menuList)
+    this.refreshPage()
+  }
+
+  handleMin(item) {
+    if (item.quantity == 1) {
+      Alert.alert(
+        'Remove Item?',
+        'This item will be removed from your cart',
+        [
+          {
+            text: 'Yes', onPress: () => this.handleRemove(item)
+          },
+          {text: 'No'},
+        ],
+        { cancelable: false }
+      )
+    } else {
+      this.props.addItemAction(item, this.props.menuList, true)
+      this.refreshPage()
+    }
   }
   
   render() {
-    // const reducer = (accumulator, currentValue) => accumulator + currentValue
-    // let totalPrice = this.props.menuList.map(item => item.price)
-    // console.log('ini total price: ', totalPrice)
     return (
       <Content>
         <Card>
@@ -96,28 +120,7 @@ class OrderSummary extends PureComponent {
                     <View style={{flex: 1, flexDirection:'row'}}>
                     <Button 
                         style={styles.button} bordered warning
-                        onPress={() => {
-                          if (item.quantity > 1) {
-                            this.setState({
-                              menuId: item.menuId,
-                              quantity: item.quantity--
-                            })
-                          } else {
-                            Alert.alert(
-                              'Remove Item?',
-                              'This item will be removed from your cart',
-                              [
-                                {
-                                  text: 'Yes', onPress: () => {
-                                    this.showAlert(item.menuId)
-                                  }
-                                },
-                                {text: 'No'},
-                              ],
-                              { cancelable: false }
-                            )
-                          }
-                        }}
+                        onPress={() => this.handleMin(item)}
                         >
                         <Text style={styles.insideButton}>-</Text>
                       </Button>
@@ -173,7 +176,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addItemAction
+  addItemAction, removeItemAction
 }, dispatch)
 
 export default connect(mapStateToProps,mapDispatchToProps)(OrderSummary)

@@ -18,23 +18,36 @@ export function fetchCustomerRestaurantId (restId) {
   }
 }
 
-export function addItemAction (item, menuList) {
-  console.log('item actions', item)
-  console.log('menu list actions', menuList)
+export function addItemAction (item, menuList, isMinus) {
   let index = menuList.findIndex(menu => {
     return menu.id === item.id
   })
 
-  console.log('index cuys', index)
-  if (index == -1) {
-    item.quantity = 1
-    menuList.push(item)
+  if (isMinus) {
+    menuList[index].quantity--
   } else {
-    menuList[index].quantity++
+    if (index == -1) {
+      item.quantity = 1
+      menuList.push(item)
+    } else {
+      menuList[index].quantity++
+    }
   }
+  return {
+    type: ADD_ITEM,
+    payload: menuList
+  }
+}
+
+export function removeItemAction (item, menuList) {
+  let index = menuList.findIndex(menu => {
+    return menu.id === item.id
+  })
+
+  menuList.splice(index, 1)
 
   return {
     type: ADD_ITEM,
     payload: menuList
   }
-} 
+}
