@@ -91,41 +91,40 @@ class OrderSummary extends PureComponent {
   }
 
   handleOrder = () => {
-  
-  let str = JSON.stringify(this.props.customer); // convert the object to a string
-  let bytes = bytesCounter.count(str); // count the number of bytes
-  let data = stringToBytes(str); // convert the string to a byte array
+    let str = JSON.stringify(this.props.customer); // convert the object to a string
+    let bytes = bytesCounter.count(str); // count the number of bytes
+    let data = stringToBytes(str); // convert the string to a byte array
 
-  // construct the UUIDs the same way it was constructed in the server component earlier
-  const BASE_UUID = '-5659-402b-aeb3-d2f7dcd1b999';
-  const PERIPHERAL_ID = '0000';
-  const PRIMARY_SERVICE_ID = '0100';
+    // construct the UUIDs the same way it was constructed in the server component earlier
+    const BASE_UUID = '-5659-402b-aeb3-d2f7dcd1b999';
+    const PERIPHERAL_ID = '0000';
+    const PRIMARY_SERVICE_ID = '0100';
 
-  let primary_service_uuid = PERIPHERAL_ID + PRIMARY_SERVICE_ID + BASE_UUID; // the service UUID
-  let ps_characteristic_uuid = PERIPHERAL_ID + '0300' + BASE_UUID; // the characteristic ID to write on
-  console.log('state attend data : ', data)
-  // write the attendees info to the characteristic
-  console.log('connected peripheral : ' , this.props.connectedPeripheral)
-  console.log('primary service uuid', primary_service_uuid)
-  console.log('characteristic uuid : ', ps_characteristic_uuid)
-  console.log('bytes : ', bytes)
-  console.log('BLE MENEJER ', BleManager.write)
-  BleManager.write(this.props.connectedPeripheral, primary_service_uuid, ps_characteristic_uuid, data, bytes)
-    .then(() => {
-      console.log('state: BleManager write')
-      // disconnect to the peripheral
-      BleManager.disconnect(this.props.connectedPeripheral)
-        .then(() => {
-          console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
-        })
-        .catch((error) => {
-          console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
-        });
-    })
-    .catch((error) => {
-      console.log(error, 'ini errror')
-      console.log('Error attending', "Something went wrong while trying to attend. Please try again.");
-    });
+    let primary_service_uuid = PERIPHERAL_ID + PRIMARY_SERVICE_ID + BASE_UUID; // the service UUID
+    let ps_characteristic_uuid = PERIPHERAL_ID + '0300' + BASE_UUID; // the characteristic ID to write on
+    console.log('state attend data : ', data)
+    // write the attendees info to the characteristic
+    console.log('connected peripheral : ' , this.props.connectedPeripheral)
+    console.log('primary service uuid', primary_service_uuid)
+    console.log('characteristic uuid : ', ps_characteristic_uuid)
+    console.log('bytes : ', bytes)
+    console.log('BLE MENEJER ', BleManager.write)
+    BleManager.write(this.props.connectedPeripheral, primary_service_uuid, ps_characteristic_uuid, data, bytes)
+      .then(() => {
+        console.log('state: BleManager write')
+        // disconnect to the peripheral
+        BleManager.disconnect(this.props.connectedPeripheral)
+          .then(() => {
+            console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
+          })
+          .catch((error) => {
+            console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
+          });
+      })
+      .catch((error) => {
+        console.log(error, 'ini errror')
+        console.log('Error attending', "Something went wrong while trying to attend. Please try again.");
+      });
   }
   
   render() {

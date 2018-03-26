@@ -58,8 +58,12 @@ class CardRestaurant extends Component {
           .then((peripheralInfo) => {
             console.log('Peripheral info:', peripheralInfo);
             this.props.fetchPeripheralDetail(peripheralInfo)
+            const { navigate } = this.props.navigation
+            navigate('SelectTable')
             // BleManager.disconnect(peripheralId)
             //   .then(() => {
+            //     const { navigate } = this.props.navigation
+            //     navigate('SelectTable')
             //     console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
             //   })
             //   .catch((error) => {
@@ -92,8 +96,6 @@ class CardRestaurant extends Component {
       console.log(new Date().getMilliseconds())
       this.props.fetchCustomerRestaurantId(data.id)
       this.props.fetchRestaurant(data)
-      const { navigate } = this.props.navigation
-      navigate('SelectTable')
     });
 
     channel.bind('restaurant-data-failed', (data) => {

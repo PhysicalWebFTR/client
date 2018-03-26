@@ -17,6 +17,7 @@ import ListMenuOwnerScreen from './src/views/owner/ListMenuOwner'
 import DetailMenuOwner from './src/components/owner/DetailMenu'
 import AddMenu from './src/components/owner/AddMenu'
 
+import OrderListScreen from './src/views/owner/OrderList'
 // import LandingScreen from './src/views/LandingScreen'
 import Register from './src/components/LandingScreen/Register'
 
