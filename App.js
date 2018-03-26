@@ -28,7 +28,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <Container>
-          <RootStack />
+          <OrderListScreen />
         </Container>
       </Provider>
     );

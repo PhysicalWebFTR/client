@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {  View, Text, } from 'react-native';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
+import { Card, CardItem, Body, Left, Right, Button } from 'native-base';
 
 export default class OrderList extends Component {
   constructor(props) {
@@ -48,15 +49,52 @@ export default class OrderList extends Component {
             category: 'FOOD'
           },
           quantity: 2,
-          isReady: false
+          isReady: true
         }
       ]
     }
   }
+
+  handleButton = (item) => {
+    let itemStates = this.state.orderLists
+    let index = itemStates.findIndex(itemState => {
+      return itemState.menuId._id === item.menuId._id
+    })
+    itemStates[index].isReady = !item.isReady
+    this.setState({
+      itemStates
+    })
+  }
+
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <FlatList
+          extraData={this.state}
+          data={this.state.orderLists}
+          renderItem={({item}) => (
+            <Card>
+            <CardItem style={{backgroundColor: item.isReady ? '#fff8a8' : 'white'}}>  
+                <Left style={style.leftList}>
+                  <Text>Table: {item.table.name}</Text>
+                  <Text>{item.menuId.name} </Text>
+                  <Text>quantity: {item.quantity} </Text>
+                </Left>
+                <Right>
+                  <Button 
+                    style={style.submitButton} warning
+                    onPress={() => this.handleButton(item)}
+                    >
+                    <Text style={{color: 'white'}}> V </Text>
+                  </Button>
+                </Right>
+            </CardItem>
+          </Card>
+          )}
+        />
+        <Button full success>
+          <Text style={{color : 'white'}}> UPDATE </Text> 
+        </Button>
       </View>
     );
   }
@@ -77,8 +115,15 @@ export default class OrderList extends Component {
   //     Alert.alert('Error connection, please try again')
   //   })
   // }
-
-  componentDidMount() {
-
-  }
 }
+
+const style = StyleSheet.create({
+  leftList: {
+    flexDirection: 'column',
+    alignItems: 'flex-start'
+  },
+  submitButton: {
+    width: 45,
+    justifyContent: 'center'
+  }
+})
