@@ -5,7 +5,7 @@ import {
 } from '../actionTypes'
 
 const initialState = {
-  idCustomer: String(Math.floor(Math.random()*80808)),
+  // idCustomer: String(Math.floor(Math.random()*80808)),
   idRestaurant: '',
   idTable: '',
   menuList: []

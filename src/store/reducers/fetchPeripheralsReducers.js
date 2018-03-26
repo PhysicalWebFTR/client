@@ -9,7 +9,6 @@ import {
 const initialState = {
   is_scanning: false,
   peripherals: [],
-  connected_peripheralId: '',
   detailPeripheral: {
 
   }

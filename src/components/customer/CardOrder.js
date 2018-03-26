@@ -18,7 +18,6 @@ class CardOrder extends Component {
       </Container>
     )
   }
-
 }
 
 export default CardOrder

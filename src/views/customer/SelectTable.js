@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Alert } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Camera from 'react-native-camera';
@@ -25,9 +25,14 @@ class SelectTable extends Component {
 
   onBarCodeRead = (e) => {
     // this.setState({qrcode: e.data})
-    this.props.fetchCustomerTable(e.data)
-    const { navigate } = this.props.navigation
-    navigate('ListMenu')
+    var tablesId = this.props.tableList.map(table => table.id)
+    if (tablesId.indexOf(e.data)) {
+      this.props.fetchCustomerTable(e.data)
+      const { navigate } = this.props.navigation
+      navigate('ListMenu')
+    } else {
+      Alert.alert('Please scan valid table')
+    }
   }
 
   render() {
@@ -65,10 +70,14 @@ const styles = StyleSheet.create({
   },
 })
 
+const mapStateToProps = state => ({
+  tableList: state.restaurant.tableList
+})
+
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchCustomerTable
 }, dispatch)
 
-const connectedSelectTable = connect(null, mapDispatchToProps)(SelectTable)
+const connectedSelectTable = connect(mapStateToProps, mapDispatchToProps)(SelectTable)
 
 export default connectedSelectTable

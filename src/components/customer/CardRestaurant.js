@@ -58,13 +58,13 @@ class CardRestaurant extends Component {
           .then((peripheralInfo) => {
             console.log('Peripheral info:', peripheralInfo);
             this.props.fetchPeripheralDetail(peripheralInfo)
-            BleManager.disconnect(peripheralId)
-              .then(() => {
-                console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
-              })
-              .catch((error) => {
-                console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
-              });
+            // BleManager.disconnect(peripheralId)
+            //   .then(() => {
+            //     console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
+            //   })
+            //   .catch((error) => {
+            //     console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
+            //   });
           })
       })
       .catch((error) => {
@@ -132,14 +132,14 @@ class CardRestaurant extends Component {
                       onPress={() => this.connect(peripheral.id)}>
                       <Text> Connect </Text>
                     </Button> */}
-                    {/* <Button success
-                      onPress={() => this.props.navigation.navigate('SelectTable')}>
-                      <Text> Connect </Text>
-                    </Button> */}
                     <Button success
-                      onPress={() => this.props.navigation.navigate('ListMenu')}>
+                      onPress={() => this.connect(peripheral.id)}>
                       <Text> Connect </Text>
                     </Button>
+                    {/* <Button success
+                      onPress={() => this.props.navigation.navigate('ListMenu')}>
+                      <Text> Connect </Text>
+                    </Button> */}
                   </Right>
   
                 </Body>

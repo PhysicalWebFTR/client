@@ -20,7 +20,7 @@ export function fetchCustomerRestaurantId (restId) {
 
 export function addItemAction (item, menuList, isMinus) {
   let index = menuList.findIndex(menu => {
-    return menu.id === item.id
+    return menu._id === item._id
   })
 
   if (isMinus) {
@@ -41,7 +41,7 @@ export function addItemAction (item, menuList, isMinus) {
 
 export function removeItemAction (item, menuList) {
   let index = menuList.findIndex(menu => {
-    return menu.id === item.id
+    return menu._id === item._id
   })
 
   menuList.splice(index, 1)
