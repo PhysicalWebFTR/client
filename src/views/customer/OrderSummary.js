@@ -131,16 +131,19 @@ class OrderSummary extends PureComponent {
       .then(() => {
         console.log('state: BleManager write')
         // disconnect to the peripheral
-        BleManager.disconnect(this.props.connectedPeripheral)
-          .then(() => {
+        BleManager.retrieveServices(this.props.connectedPeripheral)
+          .then((peripheralInfo) => {
             Alert.alert('Thank You :)', 'Your order is being process')
             this.props.navigation.goBack()
             this.props.resetOrder()
-            console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
+            BleManager.disconnect(this.props.connectedPeripheral)
+              .then(() => {
+                console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
+              })
+              .catch((error) => {
+                console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
+              });
           })
-          .catch((error) => {
-            console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
-          });
       })
       .catch((error) => {
         console.log(error, 'ini errror')
