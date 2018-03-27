@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/client/react-native-svg/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b2a4d678337faaa7cad8b298aa006274ba032cf4">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-svg-unspecified_f4e1bb3f3b804c5413ce0d6765ac938e712224ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -21,12 +30,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_7736d2090cfab0fdff262150ea143386b890fa26.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="a4590fa7eadce322ca893129fdc999074e1aa5bf">
         <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.0.1_404fad222fcb80d580e47fb3ca8e9de88c8d40f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_027025d211d600afb8d54bc0c35065d5e3f42ed6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -39,12 +66,57 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_908546d1ba4ddbb320b710aff430fe7a25868bfb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.github.ybq/Android-SpinKit/1.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="21c0f1b0de29bfe601028757c5cb125c343f5164">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.github.ybq-Android-SpinKit-1.1.0_97b12c7afa16d1d6ff1c74e3fe2e0671568ddcf1.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="f162442a19fff13995fbd51ba414d9ee05579080">
         <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_2e8bcc8414f643e522ebf38456bed28321ae75b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_317c80c11954f06b3c80e3397a448454017cfa74.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="71af915b7f4f7ec0b5f768b365145bb6a5cb9a66">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-26.0.1_487c5c954c41d6dfb32715e03603e9b0921fb54f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="22c673e65215e0764add61e3102946de895439e4">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.0.1_63fda43d932b3d34b961e107189ae67a2605c37c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -66,12 +138,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.1/2287494d4f5f9f3a9a2bb6980e3f32053721b315/core-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/core-3.2.1_89ff04f32e8700dd47c00eb9016a9cbb6a2e1b36.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
         <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.0_0fc8b1f05c0e2646c6874988ef05726a2b688d1f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_0c64563b49d22a443b39b44bedf6a843f4410c0a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -102,12 +192,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d095503f29a8dedc55b9326ed97a5902a1527ab9">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.1_64fb6a95155f3640f3bf49faa67a76e6cdcd4453.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
         <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.0_de1ee7c89296e5fdf93bc0ef1b87f6865d98eae0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_50a46ad049427772e064a6308b8e868477125d26.jar" />
     </item>
     <item
         is-multidex="false"
@@ -120,6 +228,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_c5eae6e45cb3826c863ef1439606fc8441035189.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
@@ -129,12 +246,57 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_4e5ad407ac699c97515f3e362a1ae1f14b117e43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/client/react-native-spinkit/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47b99616af6817e323d7b404b2f1922ca22228ad">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-spinkit-unspecified_618e8384fc7663be27a1f54c4c00b400facd3834.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dff4d8f88fe2c0e57306e6981fd9b90caeead7e3">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-26.0.1_22441006470d36ab8b5d0e51648e8edd7f462b17.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.0/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
         <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/support-annotations-27.1.0_becad11dc0001233a92236fd2f3d06d5911a578d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.0.1_9012dde89224e7acf8de2adda6cb42e23a92ebe9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_8de609ea62e9d489f2101981d529761de200af60.jar" />
     </item>
     <item
         is-multidex="false"
@@ -180,159 +342,6 @@
         revision="25.0.2"
         sha1="53fdf22be10c9d426ec63431c7342895bc642261">
         <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/metadata-extractor-2.9.1_2e9ccdb1f9e7cd790f137aec3c1d4d9309c6f6f7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_7736d2090cfab0fdff262150ea143386b890fa26.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_027025d211d600afb8d54bc0c35065d5e3f42ed6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_908546d1ba4ddbb320b710aff430fe7a25868bfb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.github.ybq/Android-SpinKit/1.1.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="21c0f1b0de29bfe601028757c5cb125c343f5164">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.github.ybq-Android-SpinKit-1.1.0_97b12c7afa16d1d6ff1c74e3fe2e0671568ddcf1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_317c80c11954f06b3c80e3397a448454017cfa74.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="71af915b7f4f7ec0b5f768b365145bb6a5cb9a66">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-26.0.1_487c5c954c41d6dfb32715e03603e9b0921fb54f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="22c673e65215e0764add61e3102946de895439e4">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.0.1_63fda43d932b3d34b961e107189ae67a2605c37c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.1/2287494d4f5f9f3a9a2bb6980e3f32053721b315/core-3.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/core-3.2.1_89ff04f32e8700dd47c00eb9016a9cbb6a2e1b36.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/libs/infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_0c64563b49d22a443b39b44bedf6a843f4410c0a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d095503f29a8dedc55b9326ed97a5902a1527ab9">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.1_64fb6a95155f3640f3bf49faa67a76e6cdcd4453.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_50a46ad049427772e064a6308b8e868477125d26.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_c5eae6e45cb3826c863ef1439606fc8441035189.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_4e5ad407ac699c97515f3e362a1ae1f14b117e43.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/client/react-native-spinkit/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="47b99616af6817e323d7b404b2f1922ca22228ad">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/client-react-native-spinkit-unspecified_618e8384fc7663be27a1f54c4c00b400facd3834.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="dff4d8f88fe2c0e57306e6981fd9b90caeead7e3">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-26.0.1_22441006470d36ab8b5d0e51648e8edd7f462b17.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.0.1_9012dde89224e7acf8de2adda6cb42e23a92ebe9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="/Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_8de609ea62e9d489f2101981d529761de200af60.jar" />
     </item>
     <item
         is-multidex="false"

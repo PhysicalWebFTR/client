@@ -22,13 +22,15 @@ import OrderListScreen from './src/views/owner/OrderList'
 import Register from './src/components/LandingScreen/Register'
 
 import Home from './src/views/customer/Home'
+import Diagram from './diagram.js'
+import PieChart from './piechart'
 
 export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
         <Container>
-          <OrderListScreen />
+          <PieChart />
         </Container>
       </Provider>
     );

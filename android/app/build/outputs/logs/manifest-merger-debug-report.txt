@@ -63,6 +63,7 @@ ADDED from /Users/tobiaskusnaman/Documents/yow/sore/client/android/app/src/main/
 		ADDED from /Users/tobiaskusnaman/Documents/yow/sore/client/android/app/src/main/AndroidManifest.xml:15:22-78
 uses-sdk
 ADDED from /Users/tobiaskusnaman/Documents/yow/sore/client/android/app/src/main/AndroidManifest.xml:17:5-19:41
+MERGED from [client:react-native-svg:unspecified] /Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/client/react-native-svg/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [client:react-native-camera:unspecified] /Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/client/react-native-camera/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-vision:10.2.0] /Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.2.0/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-base:10.2.0] /Users/tobiaskusnaman/Documents/yow/sore/client/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.0/AndroidManifest.xml:17:5-43
