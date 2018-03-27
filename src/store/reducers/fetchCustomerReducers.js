@@ -1,7 +1,8 @@
 import {
   FETCH_TABLE_NUM,
   FETCH_CUST_REST_ID,
-  ADD_ITEM
+  ADD_ITEM,
+  RESET_ORDER
 } from '../actionTypes'
 
 const initialState = {
@@ -27,6 +28,11 @@ export default function fetchCustomerReducers (state = {...initialState}, action
       return ({
         ...state,
         menuList: action.payload
+      })
+    case RESET_ORDER:
+      return ({
+        ...state,
+        menuList: []
       })
     default:
       return state

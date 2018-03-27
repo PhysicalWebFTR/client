@@ -12,9 +12,11 @@ import {
   ToastAndroid, // for showing notification if there's a new attendee
   FlatList, // for creating lists
   Alert,
-  Button
+  Button,
+  RefreshControl,
+  ListView
 } from 'react-native';
-import { Container, Icon, Text } from 'native-base'
+import { Container, Icon, Text, Content } from 'native-base'
 
 import BleManager from 'react-native-ble-manager'; // for talking to BLE peripherals
 const BleManagerModule = NativeModules.BleManager;
@@ -35,6 +37,14 @@ import { stringToBytes } from 'convert-string'; // for converting string to byte
 import CardRestaurant from '../../components/customer/CardRestaurant'
 
 class SearchRestaurant extends Component {
+  constructor () {
+    super()
+    this.state = {
+      refreshing: false,
+      isFound: false
+    }
+  }
+
   componentWillMount() {
     console.log('BleManager : ',BleManager)
     this.checkBluetooth()
@@ -47,6 +57,10 @@ class SearchRestaurant extends Component {
     console.log(fetchPeripheralsReset, 'reset')
     this.addListenerDiscoverPeripheral()
     this.addListenerStopScan()
+  }
+
+  componentWillUnmount () {
+    this.setState({refreshing: false})
   }
   
   checkBluetooth() {
@@ -97,6 +111,7 @@ class SearchRestaurant extends Component {
             name: peripheral.name // descriptive name given to the peripheral
           })
           this.props.fetchPeripherals(peripherals)
+          this.setState({isFound: true})
           this.peripherals = peripherals; // update the array of peripherals
         }
       }
@@ -108,9 +123,11 @@ class SearchRestaurant extends Component {
       'BleManagerStopScan',
       () => {
         console.log('scan stopped');
+        this.setState({refreshing: false})
         this.props.fetchPeripheralsLoading(false)
         if(this.peripherals.length == 0){
           Alert.alert('Restaurant not found', "Please try again");
+          this.setState({isFound: false})
         }
         this.setState({
           is_scanning: false,
@@ -121,6 +138,7 @@ class SearchRestaurant extends Component {
   }
 
   handleScan = () => {
+    this.setState({refreshing: true})
     console.log('state startScan', this.props)
     this.props.fetchPeripheralsReset()
     this.peripherals = [];
@@ -154,15 +172,36 @@ class SearchRestaurant extends Component {
 
   render(){
     const navigation = this.props.navigation
-    return (
-      <Container>
-        <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
-          <Button title="Scan" onPress={() => this.handleScan()}></Button>
-          {/* <Button title="Connect" onPress={() => this.connect('74:C6:3B:04:2B:32')}></Button> */}
-        </View>
-        <CardRestaurant navigation={navigation}/>
-      </Container>
-    )
+    if (!this.state.isFound) {
+      return (
+        <Container>
+          <Text style={styles.pullRefresh}>Pull to find restaurants</Text>
+            <Content
+              refreshControl={<RefreshControl
+              refreshing={this.state.refreshing}
+              onRefresh={() => this.handleScan()} />}
+            >
+              <CardRestaurant navigation={navigation}/>
+            </Content>
+        </Container>
+      )
+    } else {
+      return (
+        <Container>
+          <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
+            {/* <Button title="Scan" onPress={() => this.handleScan()}></Button> */}
+            <Content
+              refreshControl={<RefreshControl
+              refreshing={this.state.refreshing}
+              onRefresh={() => this.handleScan()} />}
+            >
+              <CardRestaurant navigation={navigation}/>
+            </Content>
+            {/* <Button title="Connect" onPress={() => this.connect('74:C6:3B:04:2B:32')}></Button> */}
+          </View>
+        </Container>
+      ) 
+    }
   }
 
 }
@@ -172,6 +211,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  pullRefresh: {
+    textAlign: 'center',
+    color: 'grey'
   }
 });
 

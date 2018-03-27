@@ -9,10 +9,10 @@ import {
 } from 'react-native';
 
 class SplashScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  };
+  componentDidMount () {
+    this.props.onChangeState()
   }
+
   render() {
     return (
       <View style={styles.container}>

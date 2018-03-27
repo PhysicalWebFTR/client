@@ -1,84 +1,158 @@
 import React, { Component } from 'react';
-import {  View, Text, } from 'react-native';
+import { StyleSheet, View, Text, FlatList, Alert } from 'react-native';
+import { Card, CardItem, Body, Left, Right, Button, Icon } from 'native-base';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import Pusher from 'pusher-js/react-native'; // for using Pusher inside React Native
+import BleManager from 'react-native-ble-manager'; // for talking to BLE peripherals
 
-export default class OrderList extends Component {
+import { changeStatusAction, fetchOwner } from '../../store/actions'
+class OrderList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      orderLists : [
-        {
-          table: {
-            _id: '21321321',
-            name: '2'
-          },
-          menuId: {
-              _id: '5ab7c1b3f36d2827509386e6',
-              name: 'Mojitos Punch (3)',
-              photoUrl: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F79%2F61%2F22%2F7961222ddabcdce766f5e4a0a9ace0ec.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F508695720382353558%2F&doc\'id\'=8pF0bb1FpS6flM&tbn\'id\'=zbGnUx9mF5NjFM%3A&vet=10ahUKEwio5IfJv4HaAhULpo8KHTX9AsAQMwjPASgAMAA..i&w=1000&h=1000&hl=en&bih=711&biw=1421&q=beverages%20drinks&ved=0ahUKEwio5IfJv4HaAhULpo8KHTX9AsAQMwjPASgAMAA&iact=mrc&uact=8',
-            },
-          quantity: '2',
-          isReady: false
-        },
-        {
-          table: {
-            _id: '21321321',
-            name: '2'
-          },
-          menuId: {
-            _id: '5ab7bff5f36d282750938639',
-            name: 'Indomie Vegie',
-            photoUrl: 'https://scontent-sit4-1.cdninstagram.com/vp/7414e219679c494efbbc970abdf13df2/5B33EA0B/t51.2885-15/s640x640/sh0.08/e35/23596447_2016755885267741_964127154730172416_n.jpg',
-            description: null,
-            price: 16000,
-            category: 'FOOD'
-            },
-          quantity: '3',
-          isReady: false
-        }, {
-          table: {
-            _id: '213213213',
-            name: '3'
-          },
-          menuId: {
-            _id: '5ab7c00df36d28275093863b',
-            name: 'Rainbow Sandwich',
-            photoUrl: 'https://media.travelingyuk.com/wp-content/uploads/2017/12/Roti-bakar-pelangi.jpg',
-            description: null,
-            price: 18000,
-            category: 'FOOD'
-          },
-          quantity: 2,
-          isReady: false
-        }
-      ]
+      isRefresh: false,
+      isCustomer: false
     }
   }
+
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state
+    const name = 'Admin'
+    return {
+      title: name,
+      drawerIcon: ({ tintColor }) => (
+        <Icon name="md-person" size={24} style={{ color: tintColor }} />
+      ),
+      headerLeft:
+        <Icon
+          style={{color: '#fff'}}
+          ios='ios-menu' android="md-menu"
+          size={35}
+          onPress={() => navigation.navigate('DrawerOpen')}
+        />
+    }
+  }
+
+  handleButton = (item) => {
+    this.props.changeStatusAction(item, this.props.orderLists)
+    let isRefresh = !this.state.isRefresh
+    this.setState({
+      isRefresh
+    })
+  }
+
+  componentWillMount () {
+    this.connect('B8:27:EB:5F:7C:84')
+  }
+
+  componentDidMount () {
+    this.getPusherData()
+  }
+
+  connect = (peripheralId) => {
+    console.log('state Connect Peripheral')
+    BleManager.connect(peripheralId)
+      .then(() => {
+        console.log('Connected!', 'You are now connected to the peripheral.');
+        // retrieve the services advertised by this peripheral
+        BleManager.retrieveServices(peripheralId)
+          .then((peripheralInfo) => {
+            console.log('Peripheral info:', peripheralInfo);
+            this.setState({ isConnecting: true })
+            this.props.fetchPeripheralDetail(peripheralInfo)
+            BleManager.disconnect(peripheralId)
+              .then(() => {
+                const { navigate } = this.props.navigation
+                navigate('SelectTable')
+                console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
+              })
+              .catch((error) => {
+                console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
+              });
+          })
+      })
+      .catch((error) => {
+        console.log(error)
+        BleManager.disconnect(peripheralId)
+          .then(() => {
+            console.log("Err..", 'Something went wrong while trying to connect.');
+          })
+          .catch((error) => {
+            console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
+          });
+        
+      });
+  }
+
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <FlatList
+          extraData={this.state.isRefresh}
+          data={this.props.orderLists}
+          renderItem={({item}) => (
+            <Card>
+            <CardItem style={{backgroundColor: item.isReady ? '#fff8a8' : 'white'}}>  
+                <Left style={style.leftList}>
+                  <Text>Table: {item.table.name}</Text>
+                  <Text>{item.menuId.name} </Text>
+                  <Text>quantity: {item.quantity} </Text>
+                </Left>
+                <Right>
+                  <Button 
+                    style={style.submitButton} warning
+                    onPress={() => this.handleButton(item)}
+                    >
+                    <Text style={{color: 'white'}}> V </Text>
+                  </Button>
+                </Right>
+            </CardItem>
+          </Card>
+          )}
+        />
+        <Button full success>
+          <Text style={{color : 'white'}}> UPDATE </Text> 
+        </Button>
       </View>
     );
   }
 
-  // getPusherData () {
-  //   var pusher = new Pusher('878d5b48666a27d89b79', {
-  //     cluster: 'ap1',
-  //     encrypted: true
-  //   });
+  getPusherData () {
+    var pusher = new Pusher('878d5b48666a27d89b79', {
+      cluster: 'ap1',
+      encrypted: true
+    });
 
-  //   var channel = pusher.subscribe('restaurant-channel');
-  //   channel.bind('get-order-data', (data) => {
-  //     console.log('state order-data : ', data)
-      
-  //   });
-
-  //   channel.bind('restaurant-data-failed', (data) => {
-  //     Alert.alert('Error connection, please try again')
-  //   })
-  // }
-
-  componentDidMount() {
-
+    var channel = pusher.subscribe('restaurant-channel');
+    channel.bind('get-order-data', (data) => {
+      console.log('get order list : ', data)
+      this.props.fetchOwner(data)
+    });
+    channel.bind('restaurant-data-failed', (data) => {
+      Alert.alert('Error connection, please try again')
+    })
   }
 }
+
+const style = StyleSheet.create({
+  leftList: {
+    flexDirection: 'column',
+    alignItems: 'flex-start'
+  },
+  submitButton: {
+    width: 45,
+    justifyContent: 'center'
+  }
+})
+
+const mapStateToProps = state => ({
+  orderLists: state.owner.orderLists
+})
+
+const mapDispatchToProps = dispatch => ({
+  changeStatusAction,
+  fetchOwner
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(OrderList)

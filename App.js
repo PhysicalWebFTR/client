@@ -7,6 +7,8 @@ import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Rig
 
 import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
 
+import SplashScreen from './src/views/SplashScreen'
+
 import SearchRestaurantScreen from './src/views/customer/SearchRestaurant'
 import SelectTableScreen from './src/views/customer/SelectTable'
 
@@ -24,14 +26,39 @@ import Register from './src/components/LandingScreen/Register'
 import Home from './src/views/customer/Home'
 
 export default class App extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      isSplash: true
+    }
+  }
+
+  onChangeState = () => {
+    setTimeout(() => {
+      this.setState({ isSplash: false })
+    }, 2000)
+  }
+
   render() {
-    return (
-      <Provider store={store}>
-        <Container>
-          <RootStack />
-        </Container>
-      </Provider>
-    );
+  //   return (
+  //     <Provider store={store}>
+  //         <Container>
+  //           <RootStack />
+  //         </Container>
+  //       </Provider>
+  //   )
+  // }
+    if (this.state.isSplash) {
+      return <SplashScreen onChangeState={this.onChangeState} />
+    } else {
+      return (
+        <Provider store={store}>
+          <Container>
+            <RootStack />
+          </Container>
+        </Provider>
+      );
+    }
   }
 }
 
@@ -69,6 +96,9 @@ const Stack = {
   AddMenu: {
     screen: AddMenu
   },
+  OrderList: {
+    screen: OrderListScreen
+  },
   // LandingScreen: {
   //   screen: LandingScreen
   // },
@@ -79,17 +109,17 @@ const Stack = {
 
 
 const DrawerRoutes = {
-  LandingScreenStack: {
-    name: 'LandingScreenViewStack',
+  SearchRestaurantStack: {
+    name: 'SearchRestaurantViewStack',
     screen: StackNavigator(Stack, { 
       initialRouteName: 'SearchRestaurant', 
       navigationOptions: sharedNavigationOptions
     })
   },
-  SearchRestaurantStack: {
-    name: 'SearchRestaurantViewStack',
+  OrderListStack: {
+    name: 'OrderListViewStack',
     screen: StackNavigator(Stack, { 
-      initialRouteName: 'SearchRestaurant', 
+      initialRouteName: 'OrderList', 
       navigationOptions: sharedNavigationOptions
     })
   }

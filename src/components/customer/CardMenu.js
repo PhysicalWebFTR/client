@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Dimensions, Image } from 'react-native'
+import { StyleSheet, Dimensions, Image, ToastAndroid } from 'react-native'
 import {
   Container,
   Header,
@@ -45,6 +45,13 @@ class CardMenu extends Component {
               block success style={styles.button}
               onPress={() => {
                 console.log('ini additem action',this.props.addItemAction )
+                ToastAndroid.showWithGravityAndOffset(
+                  `${foodItem.name} has been added`,
+                  ToastAndroid.LONG,
+                  ToastAndroid.BOTTOM,
+                  25,
+                  50
+                )
                 this.props.addItemAction(foodItem, this.props.menuList)
               }}  
             >

@@ -33,6 +33,10 @@ class CardRestaurant extends Component {
 
   constructor(props) {
     super(props)
+    this.state = {
+      isConnecting: false,
+      isCustomer: false
+    }
   }
 
   // _clickMoveToSelectMenu = (id) => {
@@ -43,6 +47,11 @@ class CardRestaurant extends Component {
 
   componentDidMount () {
     this.getPusherData()
+  }
+
+  componentWillMount () {
+    this.setState({ isConnecting: false })
+    this.setState({ isCustomer: true })
   }
 
   connect = (peripheralId) => {
@@ -57,9 +66,12 @@ class CardRestaurant extends Component {
         BleManager.retrieveServices(peripheralId)
           .then((peripheralInfo) => {
             console.log('Peripheral info:', peripheralInfo);
+            this.setState({ isConnecting: true })
             this.props.fetchPeripheralDetail(peripheralInfo)
-            const { navigate } = this.props.navigation
-            navigate('SelectTable')
+            // setTimeout(() => {
+            //   Alert.alert('Error connection, please try again or wait a minutes')
+            //   this.setState({ isConnecting: false })
+            // }, 15000)
             // BleManager.disconnect(peripheralId)
             //   .then(() => {
             //     const { navigate } = this.props.navigation
@@ -75,6 +87,7 @@ class CardRestaurant extends Component {
         console.log(error)
         BleManager.disconnect(peripheralId)
           .then(() => {
+            Alert.alert('Something went wrong', 'Please connect again')
             console.log("Err..", 'Something went wrong while trying to connect.');
           })
           .catch((error) => {
@@ -92,9 +105,15 @@ class CardRestaurant extends Component {
 
     var channel = pusher.subscribe('restaurant-channel');
     channel.bind('get-restaurant-event', (data) => {
+      const { navigate } = this.props.navigation
       console.log('state restaurant-event : ', data)
-      console.log(new Date().getMilliseconds())
-      this.props.fetchCustomerRestaurantId(data.id)
+      console.log('is customer: ', this.state.isCustomer)
+      // if (this.state.isCustomer) {
+      navigate('SelectTable')
+      // }
+      // console.log(new Date().getMilliseconds())
+      this.setState({ isConnecting: false })
+      this.props.fetchCustomerRestaurantId(data._id)
       this.props.fetchRestaurant(data)
     });
 
@@ -102,8 +121,21 @@ class CardRestaurant extends Component {
       Alert.alert('Error connection, please try again')
     })
   }
-
+  
   render() {
+    if (this.state.isConnecting) {
+      return (
+      <Container style={styles.loading}>
+        <Spinner 
+          size={50} 
+          type={"CircleFlip"} 
+          color={"#6097FC"} 
+          style={styles.spinner}
+        />
+      </Container>
+      )
+    }
+    console.log(this.state.isConnecting)
     if (this.props.is_scanning) {
       return (
         <Container style={styles.loading}>

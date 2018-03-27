@@ -1,7 +1,8 @@
 import { 
   FETCH_TABLE_NUM,
   FETCH_CUST_REST_ID,
-  ADD_ITEM
+  ADD_ITEM,
+  RESET_ORDER
 } from '../actionTypes'
 
 export function fetchCustomerTable (num) {
@@ -49,5 +50,11 @@ export function removeItemAction (item, menuList) {
   return {
     type: ADD_ITEM,
     payload: menuList
+  }
+}
+
+export function resetOrder () {
+  return {
+    type: RESET_ORDER
   }
 }

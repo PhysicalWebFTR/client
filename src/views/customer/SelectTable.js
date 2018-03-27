@@ -19,14 +19,17 @@ import {
 import { fetchCustomerTable } from '../../store/actions'
 
 class SelectTable extends Component {
-  componentWillMount () {
-    console.log('oooi', this.props)
-  }
+  // componentWillMount () {
+  //   Alert.alert('Please help me')
+  // }
 
   onBarCodeRead = (e) => {
+    // Alert.alert(e.data)
     // this.setState({qrcode: e.data})
-    var tablesId = this.props.tableList.map(table => table.id)
-    if (tablesId.indexOf(e.data)) {
+    console.log('table List : ', this.props.tableList)
+    var tablesIdIdx = this.props.tableList.findIndex(table => table._id === e.data)
+    console.log(tablesIdIdx)
+    if (tablesIdIdx !== -1) {
       this.props.fetchCustomerTable(e.data)
       const { navigate } = this.props.navigation
       navigate('ListMenu')

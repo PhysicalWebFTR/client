@@ -8,5 +8,8 @@ export const FETCH_RESTAURANT = 'FETCH_RESTAURANT'
 
 export const FETCH_TABLE_NUM = 'FETCH_TABLE_NUM'
 export const FETCH_CUST_REST_ID = 'FETCH_CUST_REST_ID'
-
 export const ADD_ITEM = 'ADD_ITEM'
+export const RESET_ORDER = 'RESET_ORDER'
+
+export const FETCH_OWNER = 'FETCH_OWNER'
+export const CHANGE_STATUS_READY = 'CHANGE_STATUS_READY'

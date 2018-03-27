@@ -14,8 +14,14 @@ import {
   fetchCustomerTable,
   fetchCustomerRestaurantId,
   addItemAction,
-  removeItemAction
+  removeItemAction,
+  resetOrder
 } from './fetchCustomerTable'
+
+import {
+  changeStatusAction,
+  fetchOwner
+} from './fetchOwners'
 
 export {
   fetchPeripheralsLoading,
@@ -27,5 +33,8 @@ export {
   fetchCustomerTable,
   fetchCustomerRestaurantId,
   addItemAction,
-  removeItemAction
+  removeItemAction,
+  changeStatusAction,
+  fetchOwner,
+  resetOrder
 }

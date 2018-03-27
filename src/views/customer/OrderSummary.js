@@ -2,13 +2,15 @@ import React, { PureComponent } from 'react';
 import { StyleSheet, View, Alert, FlatList } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, Left, Right, Button } from 'native-base';
 
+// import PusherJs from 'pusher-js/react-native';
+// const Pusher = require('pusher')
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import BleManager from 'react-native-ble-manager';
 import bytesCounter from 'bytes-counter';
 import { stringToBytes } from 'convert-string';
 
-import { addItemAction, removeItemAction } from '../../store/actions'
+import { addItemAction, removeItemAction, resetOrder } from '../../store/actions'
 
 class OrderSummary extends PureComponent {
   constructor () {
@@ -25,24 +27,14 @@ class OrderSummary extends PureComponent {
       title: name
     }
   }
-  
-  showAlert(menuId) {
-    let foods = this.state.orderLists
-    var index = foods.findIndex(food => {
-      return foodRootStack.menuId === menuId
-    })
-    foods.splice(index, 1);
-    this.setState({orderLists: foods})
-    if (foods.length == 0) {
-      console.log('Pindah cuy')
-    }
-  }
 
   generateTotalprice = () => {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue
-    let totalPrice = this.props.menuList.map(item => item.price * item.quantity)
-    totalPrice = totalPrice.reduce(reducer)
-    this.setState({totalPrice})
+    if (this.props.menuList.length > 0) {
+      const reducer = (accumulator, currentValue) => accumulator + currentValue
+      let totalPrice = this.props.menuList.map(item => item.price * item.quantity)
+      totalPrice = totalPrice.reduce(reducer)
+      this.setState({totalPrice}) 
+    }
   }
 
   componentDidMount () {
@@ -67,8 +59,12 @@ class OrderSummary extends PureComponent {
   }
 
   handleRemove = (item) => {
-    this.props.removeItemAction(item, this.props.menuList)
     this.refreshPage()
+    this.props.removeItemAction(item, this.props.menuList)
+    if (this.props.menuList.length <= 0) {
+      this.props.navigation.goBack()
+    }
+    
   }
 
   handleMin(item) {
@@ -90,7 +86,29 @@ class OrderSummary extends PureComponent {
     }
   }
 
+  confirmOrder = () => {
+    Alert.alert(
+      'Confirm Order',
+      'Do you want to submit this order?',
+      [
+        {
+          text: 'Yes', onPress: () => this.handleOrder()
+        },
+        {text: 'No'},
+      ],
+      { cancelable: false }
+    )
+  }
+
   handleOrder = () => {
+    let menuList = []
+    this.props.customer.menuList.forEach(menu => {
+      menuList.push({
+        _id: menu._id,
+        quantity: menu.quantity
+      })
+    })
+    this.props.customer.menuList = menuList
     let str = JSON.stringify(this.props.customer); // convert the object to a string
     let bytes = bytesCounter.count(str); // count the number of bytes
     let data = stringToBytes(str); // convert the string to a byte array
@@ -115,6 +133,9 @@ class OrderSummary extends PureComponent {
         // disconnect to the peripheral
         BleManager.disconnect(this.props.connectedPeripheral)
           .then(() => {
+            Alert.alert('Thank You :)', 'Your order is being process')
+            this.props.navigation.goBack()
+            this.props.resetOrder()
             console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
           })
           .catch((error) => {
@@ -125,6 +146,15 @@ class OrderSummary extends PureComponent {
         console.log(error, 'ini errror')
         console.log('Error attending', "Something went wrong while trying to attend. Please try again.");
       });
+    // var pusher = new Pusher('878d5b48666a27d89b79', {
+    //   cluster: 'ap1',
+    //   encrypted: true
+    // });
+    // var pusherTrigger = new PusherTrigger('878d5b48666a27d89b79', {
+    //   cluster: 'ap1',
+    //   encrypted: true
+    // })
+    // pusher.trigger('order-channel', 'get-order-event', this.props.customer)
   }
   
   render() {
@@ -186,7 +216,7 @@ class OrderSummary extends PureComponent {
         <Text>Total Price: {this.state.totalPrice}</Text>
         <View>
           <Button
-            onPress={() => this.handleOrder()}
+            onPress={() => this.confirmOrder()}
             style={styles.submit} 
             block 
             warning>
@@ -224,7 +254,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addItemAction, removeItemAction
+  addItemAction, removeItemAction, resetOrder
 }, dispatch)
 
 export default connect(mapStateToProps,mapDispatchToProps)(OrderSummary)
