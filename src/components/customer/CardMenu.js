@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Dimensions, Image, ToastAndroid } from 'react-native'
+import convertCurrency from '../../helpers/convertCurrency'
 import {
   Container,
   Header,
@@ -35,7 +36,7 @@ class CardMenu extends Component {
             <Left>
               <Body>
                 <Text style={styles.textName}>{foodItem.name}</Text>
-                <Text note>Rp. {foodItem.price}</Text>
+                <Text note>{convertCurrency(foodItem.price)}</Text>
                 <Text note style={styles.textDescription}>{foodItem.description}</Text>
               </Body>
             </Left>

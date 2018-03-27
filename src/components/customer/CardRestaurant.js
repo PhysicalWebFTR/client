@@ -39,14 +39,9 @@ class CardRestaurant extends Component {
     }
   }
 
-  // _clickMoveToSelectMenu = (id) => {
-    
-  //   const { navigate } = this.props.navigation
-  //   navigate('SelectTable', { id: id })
-  // }
-
   componentDidMount () {
     this.getPusherData()
+    this.setState({ isCustomer: true })
   }
 
   componentWillMount () {
@@ -58,20 +53,12 @@ class CardRestaurant extends Component {
     console.log('state Connect Peripheral')
     BleManager.connect(peripheralId)
       .then(() => {
-        // this.setState({
-        //   connected_peripheral: peripheralId
-        // });
         console.log('Connected!', 'You are now connected to the peripheral.');
-        // retrieve the services advertised by this peripheral
         BleManager.retrieveServices(peripheralId)
           .then((peripheralInfo) => {
             console.log('Peripheral info:', peripheralInfo);
             this.setState({ isConnecting: true })
             this.props.fetchPeripheralDetail(peripheralInfo)
-            // setTimeout(() => {
-            //   Alert.alert('Error connection, please try again or wait a minutes')
-            //   this.setState({ isConnecting: false })
-            // }, 15000)
             // BleManager.disconnect(peripheralId)
             //   .then(() => {
             //     const { navigate } = this.props.navigation
@@ -105,16 +92,13 @@ class CardRestaurant extends Component {
 
     var channel = pusher.subscribe('restaurant-channel');
     channel.bind('get-restaurant-event', (data) => {
-      const { navigate } = this.props.navigation
       console.log('state restaurant-event : ', data)
       console.log('is customer: ', this.state.isCustomer)
-      // if (this.state.isCustomer) {
-      navigate('SelectTable')
-      // }
-      // console.log(new Date().getMilliseconds())
       this.setState({ isConnecting: false })
       this.props.fetchCustomerRestaurantId(data._id)
       this.props.fetchRestaurant(data)
+      const { navigate } = this.props.navigation
+      navigate('SelectTable')
     });
 
     channel.bind('restaurant-data-failed', (data) => {
@@ -162,20 +146,11 @@ class CardRestaurant extends Component {
                     </Text>
                   </Left>
                   <Right>
-                    {/* <Button success
-                      onPress={() => this.connect(peripheral.id)}>
-                      <Text> Connect </Text>
-                    </Button> */}
                     <Button success
                       onPress={() => this.connect(peripheral.id)}>
                       <Text> Connect </Text>
                     </Button>
-                    {/* <Button success
-                      onPress={() => this.props.navigation.navigate('ListMenu')}>
-                      <Text> Connect </Text>
-                    </Button> */}
                   </Right>
-  
                 </Body>
               </CardItem>
             </Card>

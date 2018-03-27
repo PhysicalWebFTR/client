@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, View, Alert, FlatList } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, Left, Right, Button } from 'native-base';
-
+import convertToRupiah from '../../helpers/convertCurrency'
 // import PusherJs from 'pusher-js/react-native';
 // const Pusher = require('pusher')
 import { connect } from 'react-redux'
@@ -181,7 +181,7 @@ class OrderSummary extends PureComponent {
                   </Left>
                   <Right>
                     <Text style={{margin:5}}>
-                      Rp. {item.price}
+                      {convertToRupiah(item.price)}
                     </Text>
                   </Right>
                 </View>
@@ -213,7 +213,10 @@ class OrderSummary extends PureComponent {
           }
           />
         </Card>
-        <Text>Total Price: {this.state.totalPrice}</Text>
+        <Card style={styles.container}>
+          <Text style={styles.totalPrice}>Total Price: {convertToRupiah(this.state.totalPrice)}</Text>
+        </Card>
+           
         <View>
           <Button
             onPress={() => this.confirmOrder()}
@@ -229,8 +232,13 @@ class OrderSummary extends PureComponent {
 }
 
 const styles = StyleSheet.create({
+  totalPrice: {
+    margin: 10,
+    marginRight: 20,
+    textAlign: 'right'
+  },
   container: {
-    flexDirection: 'row',
+    flex: 1,
   },
   insideButton: {
     fontSize: 14,

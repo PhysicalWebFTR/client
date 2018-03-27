@@ -20,7 +20,6 @@ import DetailMenuOwner from './src/components/owner/DetailMenu'
 import AddMenu from './src/components/owner/AddMenu'
 
 import OrderListScreen from './src/views/owner/OrderList'
-// import LandingScreen from './src/views/LandingScreen'
 import Register from './src/components/LandingScreen/Register'
 
 import Home from './src/views/customer/Home'
@@ -36,25 +35,18 @@ export default class App extends React.Component {
   onChangeState = () => {
     setTimeout(() => {
       this.setState({ isSplash: false })
-    }, 2000)
+    }, 0)
   }
 
   render() {
-  //   return (
-  //     <Provider store={store}>
-  //         <Container>
-  //           <RootStack />
-  //         </Container>
-  //       </Provider>
-  //   )
-  // }
     if (this.state.isSplash) {
       return <SplashScreen onChangeState={this.onChangeState} />
     } else {
       return (
         <Provider store={store}>
           <Container>
-            <RootStack />
+            <OrderSummaryScreen />
+            {/* <RootStack /> */}
           </Container>
         </Provider>
       );
@@ -64,7 +56,7 @@ export default class App extends React.Component {
 
 const sharedNavigationOptions = ({ navigation }) => ({
   headerStyle: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#f7b734',
     paddingLeft: 12
   },
   headerTintColor: '#fff',
@@ -99,9 +91,6 @@ const Stack = {
   OrderList: {
     screen: OrderListScreen
   },
-  // LandingScreen: {
-  //   screen: LandingScreen
-  // },
   Register: {
     screen: Register
   }
@@ -141,10 +130,10 @@ const RootStack =
                     style={styles.itemImage}/>
                 </Container>
                 <Container style={styles.itemBackground}>
-                  <Text style={styles.itemName}>Header</Text>
+                  <Text style={styles.itemName}>Momakan</Text>
                 </Container>
               </Container>
-              <DrawerItems {...props} activeTintColor='#2196f3' padding='16' />
+              <DrawerItems {...props} activeTintColor='red' padding='16' />
             </ScrollView>
           ),
         }
