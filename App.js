@@ -22,7 +22,7 @@ import OrderListScreen from './src/views/owner/OrderList'
 import Register from './src/components/LandingScreen/Register'
 
 import Home from './src/views/customer/Home'
-import Diagram from './diagram.js'
+import BarChart from './barchart.js'
 import PieChart from './piechart'
 
 export default class App extends React.Component {
@@ -30,7 +30,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <Container>
-          <PieChart />
+          <BarChart />
         </Container>
       </Provider>
     );

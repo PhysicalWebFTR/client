@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import { Bar } from 'react-native-pathjs-charts'
 
-class BarChartColumnBasic extends Component {
+class BarChart extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -111,10 +111,10 @@ class BarChartColumnBasic extends Component {
         orient: 'bottom',
         label: {
           fontFamily: 'Arial',
-          fontSize: 8,
+          fontSize: 10,
           fontWeight: true,
           fill: '#34495E',
-          rotate: 45
+          rotate: 40
         }
       },
       axisY: {
@@ -126,7 +126,7 @@ class BarChartColumnBasic extends Component {
         orient: 'left',
         label: {
           fontFamily: 'Arial',
-          fontSize: 8,
+          fontSize: 14,
           fontWeight: true,
           fill: '#34495E'
         }
@@ -135,6 +135,7 @@ class BarChartColumnBasic extends Component {
 
     return (
       <View style={styles.container}>
+        <Text style={styles.title} > Product Order Summary </Text>
         <Bar data={this.state.datas} options={options} accessorKey='total'/>
       </View>
     )
@@ -144,6 +145,10 @@ class BarChartColumnBasic extends Component {
 
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold'
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -152,4 +157,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BarChartColumnBasic;
+export default BarChart;

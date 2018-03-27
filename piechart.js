@@ -27,12 +27,10 @@ class PieChartBasicAnimation extends Component {
     return (
       <View>
         <View style={styles.container}>
-          <Text> Order By Category </Text>
+          <Text style={styles.title}> Order Proportion by Category </Text>
           <Pie data={this.state.data}
-            // options={options}
             accessorKey="quantity"
-            margin={{ top: 20, bottom: 20 }}
-            color="#2980B9"
+            margin={{ top: 30, bottom: 20 }}
             pallete={
               [
                 { 'r': 25, 'g': 99, 'b': 201 },
@@ -45,10 +43,9 @@ class PieChartBasicAnimation extends Component {
             }
             r={30}
             R={150}
-            // legendPosition="topRight"
             label={{
               fontFamily: 'Arial',
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: true,
               color: '#ECF0F1'
             }}
@@ -64,6 +61,10 @@ class PieChartBasicAnimation extends Component {
 }
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold'
+  },
   container: {
     alignItems: 'center'
   },

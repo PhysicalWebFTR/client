@@ -21,8 +21,7 @@ class tableView extends Component {
     })
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     let total = rowTotal.reduce(reducer)
-    console.log(total)
-    // console.log(array1.reduce(reducer))
+    
     this.props.data.forEach(x => {
       tableHead.push(x.name)
       let percentage = Math.floor(x.quantity/total*1000)/10
@@ -37,21 +36,11 @@ class tableView extends Component {
     })
   }
 
-  componentDidMount() {
-    console.log(this.state)
-  }
-
   render() {
-    // const tableHead = ['Head', 'Head2', 'Head3', 'Head4'];
-    const tableData = [
-      ['1', '2', '3', '4'],
-      ['a', 'b', 'c', 'd'],
-    ];
-  
     return (
       <View style={styles.table}>
         <Table>
-          <Row data={this.state.tableHead} style={styles.head} textStyle={styles.text}/>
+          <Row data={this.state.tableHead} style={styles.head} textStyle={styles.title}/>
           <Rows data={this.state.tableData} style={styles.row} textStyle={styles.text}/>
         </Table>
       </View>
@@ -60,8 +49,13 @@ class tableView extends Component {
 }
  
 const styles = StyleSheet.create({
+  title: { 
+    marginLeft: 5,
+    fontWeight: 'bold',
+    fontSize: 14
+  },
   table: { margin: 15},
-  head: { height: 40, backgroundColor: '#f1f8ff' },
+  head: { height: 40, backgroundColor: '#ffc04c' },
   text: { marginLeft: 5 },
   row: { height: 30 },
 })
