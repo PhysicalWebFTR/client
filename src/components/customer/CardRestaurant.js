@@ -23,8 +23,6 @@ import {
 
 import Pusher from 'pusher-js/react-native'; // for using Pusher inside React Native
 import BleManager from 'react-native-ble-manager'; // for talking to BLE peripherals
-// const BleManagerModule = NativeModules.BleManager;
-// const bleManagerEmitter = new NativeEventEmitter(BleManagerModule); // create an event emitter for the BLE Manager module
 import Spinner from 'react-native-spinkit'; // for showing a spinner when loading something 
 
 import { fetchRestaurant, fetchPeripheralDetail, fetchCustomerRestaurantId } from '../../store/actions'
@@ -59,15 +57,6 @@ class CardRestaurant extends Component {
             console.log('Peripheral info:', peripheralInfo);
             this.setState({ isConnecting: true })
             this.props.fetchPeripheralDetail(peripheralInfo)
-            // BleManager.disconnect(peripheralId)
-            //   .then(() => {
-            //     const { navigate } = this.props.navigation
-            //     navigate('SelectTable')
-            //     console.log('Attended', 'You have successfully attended the event, please disable bluetooth.');
-            //   })
-            //   .catch((error) => {
-            //     console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
-            //   });
           })
       })
       .catch((error) => {
@@ -78,7 +67,7 @@ class CardRestaurant extends Component {
             console.log("Err..", 'Something went wrong while trying to connect.');
           })
           .catch((error) => {
-            console.log('Error disconnecting', "You have successfully attended the event but there's a problem disconnecting to the peripheral, please disable bluetooth to force disconnection.");
+            console.log('Error disconnecting');
           });
         
       });
@@ -107,30 +96,8 @@ class CardRestaurant extends Component {
   }
   
   render() {
-    if (this.state.isConnecting) {
-      return (
-      <Container style={styles.loading}>
-        <Spinner 
-          size={50} 
-          type={"CircleFlip"} 
-          color={"#6097FC"} 
-          style={styles.spinner}
-        />
-      </Container>
-      )
-    }
-    console.log(this.state.isConnecting)
     if (this.props.is_scanning) {
-      return (
-        <Container style={styles.loading}>
-          <Spinner 
-            size={50} 
-            type={"WanderingCubes"} 
-            color={"#6097FC"} 
-            style={styles.spinner}
-          />
-        </Container>
-      )
+      return <Container></Container>
     } else if (this.props.peripherals) {
       return (
         <Container>

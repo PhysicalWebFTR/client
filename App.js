@@ -15,15 +15,6 @@ import SelectTableScreen from './src/views/customer/SelectTable'
 import ListMenuCustomerScreen from './src/views/customer/ListMenuCustomer'
 import OrderSummaryScreen from './src/views/customer/OrderSummary'
 
-import ListMenuOwnerScreen from './src/views/owner/ListMenuOwner'
-import DetailMenuOwner from './src/components/owner/DetailMenu'
-import AddMenu from './src/components/owner/AddMenu'
-
-import OrderListScreen from './src/views/owner/OrderList'
-import Register from './src/components/LandingScreen/Register'
-
-import Home from './src/views/customer/Home'
-
 export default class App extends React.Component {
   constructor () {
     super()
@@ -45,7 +36,6 @@ export default class App extends React.Component {
       return (
         <Provider store={store}>
           <Container>
-            {/* <OrderSummaryScreen /> */}
             <RootStack />
           </Container>
         </Provider>
@@ -78,21 +68,6 @@ const Stack = {
   },
   OrderSummary: {
     screen: OrderSummaryScreen
-  },
-  ListMenuOwnerScreen: {
-    screen: ListMenuOwnerScreen
-  },
-  DetailMenuOwner: {
-    screen: DetailMenuOwner
-  },
-  AddMenu: {
-    screen: AddMenu
-  },
-  OrderList: {
-    screen: OrderListScreen
-  },
-  Register: {
-    screen: Register
   }
 }
 
@@ -104,45 +79,39 @@ const DrawerRoutes = {
       initialRouteName: 'SearchRestaurant', 
       navigationOptions: sharedNavigationOptions
     })
-  },
-  OrderListStack: {
-    name: 'OrderListViewStack',
-    screen: StackNavigator(Stack, { 
-      initialRouteName: 'OrderList', 
-      navigationOptions: sharedNavigationOptions
-    })
   }
 }
 
 const RootStack =
   StackNavigator({
-    Drawer: {
-      name: 'Drawer',
-      screen: DrawerNavigator(
-        DrawerRoutes,
-        {
-          contentComponent: (props) => (
-            <ScrollView>
-              <Container style={styles.navigationBackground}>
-                <Container style={styles.navigationImage}>
-                  <Image 
-                    source={require('./src/res/background.jpg')} 
-                    style={styles.itemImage}/>
-                </Container>
-                <Container style={styles.itemBackground}>
-                  <Text style={styles.itemName}>Momakan</Text>
-                </Container>
-              </Container>
-              <DrawerItems {...props} activeTintColor='red' padding='16' />
-            </ScrollView>
-          ),
-        }
-      )
-    },
+    // Drawer: {
+    //   name: 'Drawer',
+    //   screen: DrawerNavigator(
+    //     DrawerRoutes,
+    //     {
+    //       contentComponent: (props) => (
+    //         <ScrollView>
+    //           <Container style={styles.navigationBackground}>
+    //             <Container style={styles.navigationImage}>
+    //               <Image 
+    //                 source={require('./src/res/background.jpg')} 
+    //                 style={styles.itemImage}/>
+    //             </Container>
+    //             <Container style={styles.itemBackground}>
+    //               <Text style={styles.itemName}>Momakan</Text>
+    //             </Container>
+    //           </Container>
+    //           <DrawerItems {...props} activeTintColor='red' padding='16' />
+    //         </ScrollView>
+    //       ),
+    //     }
+    //   )
+    // },
     ...Stack
   },
   {
-    headerMode: 'none'
+    initialRouteName: 'SearchRestaurant',
+    navigationOptions: sharedNavigationOptions
   }
 )
 

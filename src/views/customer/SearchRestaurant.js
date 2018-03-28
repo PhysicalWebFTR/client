@@ -14,7 +14,8 @@ import {
   Alert,
   Button,
   RefreshControl,
-  ListView
+  ListView,
+  Image
 } from 'react-native';
 import { Container, Icon, Text, Content } from 'native-base'
 
@@ -98,7 +99,7 @@ class SearchRestaurant extends Component {
   addListenerDiscoverPeripheral() {
     bleManagerEmitter.addListener('BleManagerDiscoverPeripheral', (peripheral) => {
       // console.log('state addListenerDiscoverPeri Before: ', peripheral)
-      if (peripheral.name) {
+      if (peripheral.name === 'Mo Resto') {
         console.log('state addListenerDiscoverPeri Fix : ', peripheral)
         var peripherals = this.peripherals;
         // check if the peripheral already exists 
@@ -156,17 +157,7 @@ class SearchRestaurant extends Component {
     const { params } = navigation.state
     const name = 'Search Restaurant'
     return {
-      title: name,
-      drawerIcon: ({ tintColor }) => (
-        <Icon name="home" size={24} style={{ color: tintColor }} />
-      ),
-      headerLeft:
-        <Icon
-          style={{color: '#fff'}}
-          ios='ios-menu' android="md-menu"
-          size={35}
-          onPress={() => navigation.navigate('DrawerOpen')}
-        />
+      title: name
     }
   };
 
@@ -174,8 +165,11 @@ class SearchRestaurant extends Component {
     const navigation = this.props.navigation
     if (!this.state.isFound) {
       return (
-        <Container>
-          <Text style={styles.pullRefresh}>Pull to find restaurants</Text>
+        <Container style={{flex: 1}}>
+          <View style={{ alignItems:'center', justifyContent: 'center'}}>
+            <Text style={styles.pullRefresh}>Pull to find restaurants</Text>
+            <Image style={styles.arrow} source={require('../../res/arrow-up.png')} />
+          </View>
             <Content
               refreshControl={<RefreshControl
               refreshing={this.state.refreshing}
@@ -213,8 +207,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   pullRefresh: {
+    marginTop: 20,
     textAlign: 'center',
     color: 'grey'
+  },
+  arrow: {
+    marginTop: 15,
+    marginBottom: 20,
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    transform: [{
+      rotate: '180deg'
+    }]
   }
 });
 

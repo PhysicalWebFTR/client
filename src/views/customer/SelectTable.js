@@ -37,6 +37,7 @@ class SelectTable extends Component {
       var tablesIdIdx = this.props.tableList.findIndex(table => table._id === e.data)
       console.log(tablesIdIdx)
       if (tablesIdIdx !== -1) {
+        console.log('masuk gak true nya? ')
         this.setState({ isScan: true })
         this.props.fetchCustomerTable(e.data)
         const { navigate } = this.props.navigation

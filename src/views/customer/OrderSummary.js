@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 import { StyleSheet, View, Alert, FlatList } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text, Left, Right, Button } from 'native-base';
 import convertToRupiah from '../../helpers/convertCurrency'
-// import PusherJs from 'pusher-js/react-native';
-// const Pusher = require('pusher')
+
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import BleManager from 'react-native-ble-manager';
@@ -134,7 +133,7 @@ class OrderSummary extends PureComponent {
         BleManager.retrieveServices(this.props.connectedPeripheral)
           .then((peripheralInfo) => {
             Alert.alert('Thank You :)', 'Your order is being process')
-            this.props.navigation.goBack()
+            this.props.navigation.popToTop()
             this.props.resetOrder()
             BleManager.disconnect(this.props.connectedPeripheral)
               .then(() => {
@@ -149,15 +148,6 @@ class OrderSummary extends PureComponent {
         console.log(error, 'ini errror')
         console.log('Error attending', "Something went wrong while trying to attend. Please try again.");
       });
-    // var pusher = new Pusher('878d5b48666a27d89b79', {
-    //   cluster: 'ap1',
-    //   encrypted: true
-    // });
-    // var pusherTrigger = new PusherTrigger('878d5b48666a27d89b79', {
-    //   cluster: 'ap1',
-    //   encrypted: true
-    // })
-    // pusher.trigger('order-channel', 'get-order-event', this.props.customer)
   }
   
   render() {
@@ -173,7 +163,6 @@ class OrderSummary extends PureComponent {
             data={this.props.menuList}
             extraData={this.state.isRefresh}
             renderItem={({item}) => {
-                        
               return (
               <CardItem key={item.menuId} bordered style={{flex: 1, flexWrap: 'wrap'}}>
                 <View style={styles.container}>
